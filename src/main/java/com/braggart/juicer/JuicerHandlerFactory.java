@@ -14,7 +14,6 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,41 +73,46 @@ public class JuicerHandlerFactory {
 
                 @Override
                 public JuicerData parse(Connection.Response response, Document document, String html) {
-                    JuicerData juicerData = null;
                     try {
                         if(parserMethod!=null){
-                            juicerData = (JuicerData)parserMethod.invoke(handlerImpl, getRequiredParameter(getParameterType(parserMethod),document,html));
+                            JuicerData juicerData = (JuicerData)parserMethod.invoke(handlerImpl, getRequiredParameter(getParameterType(parserMethod),document,html));
                             juicerData.put("_source", document.location());
+                            return juicerData;
+                        } else {
+                            throw new RuntimeException("Your handler has no method for parser.");
                         }
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();
+                        throw new RuntimeException("Cannot call the parser method correctly. " +
+                                "Please check the return type, the parameter type and access permission of this method.");
                     }
-                    return juicerData;
                 }
 
                 @Override
                 public JuicerSource getUrls(JuicerData juicerData) {
-                    JuicerSource urls = null;
                     if(juicerData==null){
                         juicerData = new JuicerData();
                     }
                     try {
                         if(hrefMethod!=null){
-                            urls = (JuicerSource)hrefMethod.invoke(handlerImpl,
+                            return (JuicerSource)hrefMethod.invoke(handlerImpl,
                                     getRequiredParameter(
                                             getParameterType(hrefMethod),juicerData)
                             );
+                        } else {
+                            throw new RuntimeException("Your handler has no method for getting urls.");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
+                        throw new RuntimeException("Cannot call the getUrls method correctly. " +
+                                "Please check the return type, the parameter type and access permission of this method.");
                     }
-                    return urls;
                 }
             };
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("Cannot implement the handler for class ["+clz.getName()+"]");
         }
-        return null;
     };
 
     private <A extends Annotation> Method getAnnotationMethod(Method[] methods, Class<A> annotationClass){

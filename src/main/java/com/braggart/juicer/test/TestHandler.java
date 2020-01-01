@@ -8,9 +8,6 @@ import com.braggart.juicer.core.JuicerData;
 import com.braggart.juicer.core.JuicerSource;
 
 import javax.swing.text.Document;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
 
 @Handler("test")
 public class TestHandler {

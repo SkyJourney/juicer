@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public class JuicerSource extends ArrayList<URL> {
 
     public boolean add(String url) {
-        boolean success = false;
         try {
-            success =  super.add(new URL(url));
+            return super.add(new URL(url));
         } catch (MalformedURLException e) {
             e.printStackTrace();
+            throw new RuntimeException("The input URL is malformed.");
         }
-        return success;
+
     }
 
     public String getString(int index) {
