@@ -90,4 +90,15 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>youyue-releases</id>
+      <url>http://192.168.0.113:8081/repository/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>youyue-snapshots</id>
+      <url>http://192.168.0.113:8081/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
