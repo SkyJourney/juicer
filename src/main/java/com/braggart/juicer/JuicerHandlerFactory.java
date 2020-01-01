@@ -5,6 +5,7 @@ import com.braggart.juicer.annotation.Href;
 import com.braggart.juicer.annotation.Parser;
 import com.braggart.juicer.core.JuicerData;
 import com.braggart.juicer.core.JuicerHandler;
+import com.braggart.juicer.core.JuicerSource;
 import com.braggart.juicer.util.ClassScanner;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
@@ -85,16 +86,15 @@ public class JuicerHandlerFactory {
                     return juicerData;
                 }
 
-                @SuppressWarnings("unchecked")
                 @Override
-                public List<URL> getUrls(JuicerData juicerData) {
-                    List<URL> urls = null;
+                public JuicerSource getUrls(JuicerData juicerData) {
+                    JuicerSource urls = null;
                     if(juicerData==null){
                         juicerData = new JuicerData();
                     }
                     try {
                         if(hrefMethod!=null){
-                            urls = (List<URL>)hrefMethod.invoke(handlerImpl,
+                            urls = (JuicerSource)hrefMethod.invoke(handlerImpl,
                                     getRequiredParameter(
                                             getParameterType(hrefMethod),juicerData)
                             );
@@ -140,6 +140,5 @@ public class JuicerHandlerFactory {
         }
         return parameters;
     }
-
 
 }

@@ -1,8 +1,5 @@
 package com.braggart.juicer.core;
 
-import java.net.URL;
-import java.util.List;
-
 /**
  * @author SkyJourney
  */
@@ -10,7 +7,7 @@ import java.util.List;
 public interface HrefSupplier {
     /**
      * Supply the collection of URL
-     * @return
+     * @return JuicerSource
      */
-    List<URL> getUrls(JuicerData juicerData);
+    JuicerSource getUrls(JuicerData juicerData);
 }
