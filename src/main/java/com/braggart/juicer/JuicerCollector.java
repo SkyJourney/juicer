@@ -4,7 +4,6 @@ import com.braggart.juicer.core.Headers;
 import com.braggart.juicer.core.JuicerData;
 import com.braggart.juicer.core.JuicerHandler;
 import com.braggart.juicer.util.JsoupDocumentHelper;
-import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
@@ -35,32 +34,36 @@ public class JuicerCollector {
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, JuicerData juicerData){
-        return getDataFromHandler(handlerBean, null, juicerData);
+        Headers headers = JsoupDocumentHelper.getSampleHeaders();
+        return getDataFromHandler(handlerBean, headers, juicerData);
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers,JuicerData juicerData){
         JuicerHandler juicerHandler = juicerHandlerFactory.getJuicerHandler(handlerBean);
-        Stream<URL> stream = juicerHandler.getUrls(juicerData).parallelStream();
+        if(juicerData!=null && juicerData.get("_source")!=null){
+            headers.put("referer", (String)juicerData.get("_source"));
+        }
+        Stream<URL> stream = juicerHandler.getUrls(juicerData).stream();
         return stream.map(URL::toExternalForm)
                 .map(url -> {
-                    Connection.Response response = null;
                     try {
-                        response = JsoupDocumentHelper.getResponse(url, headers);
+                        return JsoupDocumentHelper.getResponse(url, headers);
                     } catch (Exception e) {
                         e.printStackTrace();
+                        throw new RuntimeException("Cannot get response.");
                     }
-                    return response;
                 }).filter(Objects::nonNull)
                 .map(response -> {
-                    Document document = null;
+                    Document document;
                     try {
                         document = response.parse();
                     } catch (IOException e) {
                         e.printStackTrace();
+                        throw new RuntimeException("Cannot get document.");
                     }
                     assert document != null;
                     String html = document.html();
-                    return juicerHandler.parse(response,document, html);
+                    return juicerHandler.parse(response, document, html);
                 }).collect(Collectors.toList());
     }
 }

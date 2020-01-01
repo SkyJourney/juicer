@@ -76,10 +76,14 @@ public class JuicerHandlerFactory {
                     try {
                         if(parserMethod!=null){
                             JuicerData juicerData = (JuicerData)parserMethod.invoke(handlerImpl, getRequiredParameter(getParameterType(parserMethod),document,html));
-                            juicerData.put("_source", document.location());
-                            return juicerData;
+                            if(juicerData != null){
+                                juicerData.put("_source", document.location());
+                                return juicerData;
+                            } else {
+                                return null;
+                            }
                         } else {
-                            throw new RuntimeException("Your handler has no method for parser.");
+                            throw new RuntimeException("Your handler ["+clz.getName()+"] has no method for parser.");
                         }
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();
@@ -95,12 +99,17 @@ public class JuicerHandlerFactory {
                     }
                     try {
                         if(hrefMethod!=null){
-                            return (JuicerSource)hrefMethod.invoke(handlerImpl,
+                            JuicerSource juicerSource =  (JuicerSource)hrefMethod.invoke(handlerImpl,
                                     getRequiredParameter(
                                             getParameterType(hrefMethod),juicerData)
                             );
+                            if(juicerSource!=null){
+                                return juicerSource;
+                            } else {
+                                throw new  RuntimeException("@Href method cannot return null.");
+                            }
                         } else {
-                            throw new RuntimeException("Your handler has no method for getting urls.");
+                            throw new RuntimeException("Your handler ["+clz.getName()+"] has no method for getting urls.");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
