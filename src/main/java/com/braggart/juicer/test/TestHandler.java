@@ -1,4 +1,4 @@
-package com.braggart.test;
+package com.braggart.juicer.test;
 
 
 import com.braggart.juicer.annotation.Handler;

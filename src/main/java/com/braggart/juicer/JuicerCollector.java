@@ -60,7 +60,7 @@ public class JuicerCollector {
                     }
                     assert document != null;
                     String html = document.html();
-                    return juicerHandler.parse(document, html);
+                    return juicerHandler.parse(response,document, html);
                 }).collect(Collectors.toList());
     }
 }

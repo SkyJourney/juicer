@@ -1,5 +1,6 @@
 package com.braggart.juicer.core;
 
+import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
 /**
@@ -9,7 +10,7 @@ import org.jsoup.nodes.Document;
 public interface DomParser {
     /**
      * Supply the map of data from page.
-     * @return
+     * @return JuicerData
      */
-    JuicerData parse(Document document, String html);
+    JuicerData parse(Connection.Response response, Document document, String html);
 }

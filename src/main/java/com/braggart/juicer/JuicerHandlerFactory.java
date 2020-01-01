@@ -6,6 +6,7 @@ import com.braggart.juicer.annotation.Parser;
 import com.braggart.juicer.core.JuicerData;
 import com.braggart.juicer.core.JuicerHandler;
 import com.braggart.juicer.util.ClassScanner;
+import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
 import java.lang.annotation.Annotation;
@@ -68,14 +69,14 @@ public class JuicerHandlerFactory {
         Method parserMethod = getAnnotationMethod(methods, Parser.class);
         try {
             return new JuicerHandler() {
-                Object impl = clz.getConstructor().newInstance();
+                Object handlerImpl = clz.getConstructor().newInstance();
 
                 @Override
-                public JuicerData parse(Document document, String html) {
+                public JuicerData parse(Connection.Response response, Document document, String html) {
                     JuicerData juicerData = null;
                     try {
                         if(parserMethod!=null){
-                            juicerData = (JuicerData)parserMethod.invoke(impl, getRequiredParameter(getParameterType(parserMethod),document,html));
+                            juicerData = (JuicerData)parserMethod.invoke(handlerImpl, getRequiredParameter(getParameterType(parserMethod),document,html));
                             juicerData.put("_source", document.location());
                         }
                     } catch (IllegalAccessException | InvocationTargetException e) {
@@ -84,6 +85,7 @@ public class JuicerHandlerFactory {
                     return juicerData;
                 }
 
+                @SuppressWarnings("unchecked")
                 @Override
                 public List<URL> getUrls(JuicerData juicerData) {
                     List<URL> urls = null;
@@ -92,7 +94,7 @@ public class JuicerHandlerFactory {
                     }
                     try {
                         if(hrefMethod!=null){
-                            urls = (List<URL>)hrefMethod.invoke(impl,
+                            urls = (List<URL>)hrefMethod.invoke(handlerImpl,
                                     getRequiredParameter(
                                             getParameterType(hrefMethod),juicerData)
                             );
