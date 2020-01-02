@@ -7,6 +7,6 @@ public class JuicerTest {
     public static void main(String[] args) {
         JuicerHandlerFactory juicerHandlerFactory = new JuicerHandlerFactory("com.braggart.juicer.test");
         JuicerCollector juicerCollector = new JuicerCollector(juicerHandlerFactory);
-        System.out.println(juicerCollector.getDataFromHandler("test"));
+        juicerCollector.getDataFromHandler("test");
     }
 }

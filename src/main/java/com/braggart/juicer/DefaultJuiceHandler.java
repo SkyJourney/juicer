@@ -6,6 +6,9 @@ import com.braggart.juicer.core.JuicerSource;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
+import java.net.URL;
+import java.util.List;
+
 public class DefaultJuiceHandler implements JuicerHandler {
     @Override
     public JuicerSource getUrls(JuicerData juicerData) {

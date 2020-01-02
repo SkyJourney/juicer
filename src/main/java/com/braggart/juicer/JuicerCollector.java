@@ -26,6 +26,7 @@ public class JuicerCollector {
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean){
+        Headers headers = JsoupDocumentHelper.getSampleHeaders();
         return getDataFromHandler(handlerBean, null, null);
     }
 
