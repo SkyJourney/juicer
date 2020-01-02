@@ -3,9 +3,7 @@ package com.braggart.juicer;
 import com.braggart.juicer.annotation.Handler;
 import com.braggart.juicer.annotation.Href;
 import com.braggart.juicer.annotation.Parser;
-import com.braggart.juicer.core.JuicerData;
-import com.braggart.juicer.core.JuicerHandler;
-import com.braggart.juicer.core.JuicerSource;
+import com.braggart.juicer.core.*;
 import com.braggart.juicer.util.ClassScanner;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
@@ -14,9 +12,10 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -24,7 +23,7 @@ import java.util.stream.Stream;
 
 public class JuicerHandlerFactory {
 
-    private static Map<String,JuicerHandler> juicerHandlerMap = new HashMap<>();
+    private static Map<String,JuicerHandler> juicerHandlerMap = new ConcurrentHashMap<>();
 
     public JuicerHandlerFactory(String basePackage) {
         initHandlerClasses(basePackage);
@@ -32,10 +31,6 @@ public class JuicerHandlerFactory {
 
     public JuicerHandlerFactory(List<String> basePackages) {
         basePackages.forEach(this::initHandlerClasses);
-    }
-
-    public Map<String, JuicerHandler> getJuicerHandlerMap() {
-        return juicerHandlerMap;
     }
 
     public JuicerHandler getJuicerHandler(String key){
@@ -166,6 +161,38 @@ public class JuicerHandlerFactory {
             }
         }
         return parameters;
+    }
+
+    public void addJuicerHandler(String handlerName, HrefSupplier hrefSupplier, DomParser domParser){
+        addJuicerHandler(handlerName, null, hrefSupplier, domParser);
+    }
+
+    public void addJuicerHandler(String handlerName, String parentName, HrefSupplier hrefSupplier, DomParser domParser){
+        juicerHandlerMap.put(handlerName, new JuicerHandler() {
+            @Override
+            public boolean hasParent() {
+                return parentName!=null;
+            }
+
+            @Override
+            public String getParent() {
+                return parentName;
+            }
+
+            @Override
+            public JuicerData parse(Connection.Response response, Document document, String html) {
+                Objects.requireNonNull(domParser);
+                JuicerData juicerData =domParser.parse(response, document, html);
+                juicerData.put("_source", document.location());
+                return juicerData;
+            }
+
+            @Override
+            public JuicerSource getUrls(JuicerData juicerData) {
+                Objects.requireNonNull(hrefSupplier);
+                return hrefSupplier.getUrls(juicerData);
+            }
+        });
     }
 
 }
