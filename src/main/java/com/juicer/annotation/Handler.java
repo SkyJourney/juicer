@@ -1,4 +1,4 @@
-package com.braggart.juicer.annotation;
+package com.juicer.annotation;
 
 import java.lang.annotation.*;
 

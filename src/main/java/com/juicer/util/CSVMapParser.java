@@ -1,4 +1,4 @@
-package com.braggart.juicer.util;
+package com.juicer.util;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;

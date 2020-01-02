@@ -1,9 +1,9 @@
-package com.braggart.juicer.annotation;
+package com.juicer.annotation;
 
 import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Href {
+public @interface Parser {
 }

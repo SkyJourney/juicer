@@ -1,4 +1,4 @@
-package com.braggart.juicer.core;
+package com.juicer.core;
 
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;

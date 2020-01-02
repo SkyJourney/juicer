@@ -1,6 +1,6 @@
-package com.braggart.juicer.util;
+package com.juicer.util;
 
-import com.braggart.juicer.core.Headers;
+import com.juicer.core.Headers;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

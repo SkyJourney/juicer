@@ -1,4 +1,4 @@
-package com.braggart.juicer.util;
+package com.juicer.util;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -9,6 +9,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Objects;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -16,23 +17,21 @@ public class ClassScanner {
     /**
      * 取得某个接口下所有实现这个接口的类
      * */
-    public static List<Class> getAllClassByInterface(Class c) {
-        List<Class>  returnClassList = null;
+    public static List<Class<?>> getAllClassByInterface(Class<?> c) {
+        List<Class<?>>  returnClassList = null;
 
         if(c.isInterface()) {
             // 获取当前的包名
             String packageName = c.getPackage().getName();
             // 获取当前包下以及子包下所以的类
             List<Class<?>> allClass = getClasses(packageName);
-            if(allClass != null) {
-                returnClassList = new ArrayList<Class>();
-                for(Class classes : allClass) {
-                    // 判断是否是同一个接口
-                    if(c.isAssignableFrom(classes)) {
-                        // 本身不加入进去
-                        if(!c.equals(classes)) {
-                            returnClassList.add(classes);
-                        }
+            returnClassList = new ArrayList<>();
+            for(Class<?> classes : allClass) {
+                // 判断是否是同一个接口
+                if(c.isAssignableFrom(classes)) {
+                    // 本身不加入进去
+                    if(!c.equals(classes)) {
+                        returnClassList.add(classes);
                     }
                 }
             }
@@ -48,28 +47,27 @@ public class ClassScanner {
     public static String[] getPackageAllClassName(String classLocation, String packageName){
         //将packageName分解
         String[] packagePathSplit = packageName.split("[.]");
-        String realClassLocation = classLocation;
+        StringBuilder realClassLocation = new StringBuilder(classLocation);
         int packageLength = packagePathSplit.length;
-        for(int i = 0; i< packageLength; i++){
-            realClassLocation = realClassLocation + File.separator+packagePathSplit[i];
+        for (String s : packagePathSplit) {
+            realClassLocation.append(File.separator).append(s);
         }
-        File packeageDir = new File(realClassLocation);
+        File packeageDir = new File(realClassLocation.toString());
         if(packeageDir.isDirectory()){
-            String[] allClassName = packeageDir.list();
-            return allClassName;
+            return packeageDir.list();
         }
         return null;
     }
 
     /**
      * 从包package中获取所有的Class
-     * @param pack
-     * @return
+     * @param packageName Package path
+     * @return List
      */
     public static List<Class<?>> getClasses(String packageName){
 
         //定义一个class类的集合
-        List<Class<?>> classes = new ArrayList<Class<?>>();
+        List<Class<?>> classes = new ArrayList<>();
         //是否循环迭代
         boolean recursive = true;
         //获取包的名字 并进行替换
@@ -89,7 +87,7 @@ public class ClassScanner {
                     //获取包的物理路径
                     String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
                     //以文件的方式扫描整个包下的文件 并添加到集合中
-                    findAndAddClassesInPackageByFile(packageName, filePath, recursive, classes);
+                    findAndAddClassesInPackageByFile(packageName, filePath, true, classes);
                 } else if ("jar".equals(protocol)){
                     //如果是jar包文件
                     //定义一个JarFile
@@ -118,17 +116,15 @@ public class ClassScanner {
                                     packageName = name.substring(0, idx).replace('/', '.');
                                 }
                                 //如果可以迭代下去 并且是一个包
-                                if ((idx != -1) || recursive){
-                                    //如果是一个.class文件 而且不是目录
-                                    if (name.endsWith(".class") && !entry.isDirectory()) {
-                                        //去掉后面的".class" 获取真正的类名
-                                        String className = name.substring(packageName.length() + 1, name.length() - 6);
-                                        try {
-                                            //添加到classes
-                                            classes.add(Class.forName(packageName + '.' + className));
-                                        } catch (ClassNotFoundException e) {
-                                            e.printStackTrace();
-                                        }
+                                //如果是一个.class文件 而且不是目录
+                                if (name.endsWith(".class") && !entry.isDirectory()) {
+                                    //去掉后面的".class" 获取真正的类名
+                                    String className = name.substring(packageName.length() + 1, name.length() - 6);
+                                    try {
+                                        //添加到classes
+                                        classes.add(Class.forName(packageName + '.' + className));
+                                    } catch (ClassNotFoundException e) {
+                                        e.printStackTrace();
                                     }
                                 }
                             }
@@ -147,10 +143,10 @@ public class ClassScanner {
 
     /**
      * 以文件的形式来获取包下的所有Class
-     * @param packageName
-     * @param packagePath
-     * @param recursive
-     * @param classes
+     * @param packageName 包名
+     * @param packagePath 包路径
+     * @param recursive 是否迭代
+     * @param classes 类集合
      */
     public static void findAndAddClassesInPackageByFile(String packageName, String packagePath, final boolean recursive, List<Class<?>> classes){
         //获取此包的目录 建立一个File
@@ -160,13 +156,10 @@ public class ClassScanner {
             return;
         }
         //如果存在 就获取包下的所有文件 包括目录
-        File[] dirfiles = dir.listFiles(new FileFilter() {
-            //自定义过滤规则 如果可以循环(包含子目录) 或则是以.class结尾的文件(编译好的java类文件)
-            public boolean accept(File file) {
-                return (recursive && file.isDirectory()) || (file.getName().endsWith(".class"));
-            }
-        });
+        //自定义过滤规则 如果可以循环(包含子目录) 或则是以.class结尾的文件(编译好的java类文件)
+        File[] dirfiles = dir.listFiles(file -> (recursive && file.isDirectory()) || (file.getName().endsWith(".class")));
         //循环所有文件
+        Objects.requireNonNull(dirfiles);
         for (File file : dirfiles) {
             //如果是目录 则继续扫描
             if (file.isDirectory()) {

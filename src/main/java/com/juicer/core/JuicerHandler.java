@@ -1,4 +1,4 @@
-package com.braggart.juicer.core;
+package com.juicer.core;
 
 public interface JuicerHandler extends HrefSupplier, DomParser{
 

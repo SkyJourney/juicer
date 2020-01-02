@@ -1,10 +1,10 @@
-package com.braggart.juicer;
+package com.juicer;
 
-import com.braggart.juicer.annotation.Handler;
-import com.braggart.juicer.annotation.Href;
-import com.braggart.juicer.annotation.Parser;
-import com.braggart.juicer.core.*;
-import com.braggart.juicer.util.ClassScanner;
+import com.juicer.annotation.Handler;
+import com.juicer.annotation.Href;
+import com.juicer.annotation.Parser;
+import com.juicer.core.*;
+import com.juicer.util.ClassScanner;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 public class JuicerHandlerFactory {
 
-    private static Map<String,JuicerHandler> juicerHandlerMap = new ConcurrentHashMap<>();
+    private static Map<String, JuicerHandler> juicerHandlerMap = new ConcurrentHashMap<>();
 
     public JuicerHandlerFactory(String basePackage) {
         initHandlerClasses(basePackage);

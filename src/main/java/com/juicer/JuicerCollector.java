@@ -1,9 +1,9 @@
-package com.braggart.juicer;
+package com.juicer;
 
-import com.braggart.juicer.core.Headers;
-import com.braggart.juicer.core.JuicerData;
-import com.braggart.juicer.core.JuicerHandler;
-import com.braggart.juicer.util.JsoupDocumentHelper;
+import com.juicer.core.Headers;
+import com.juicer.core.JuicerData;
+import com.juicer.core.JuicerHandler;
+import com.juicer.util.JsoupDocumentHelper;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
