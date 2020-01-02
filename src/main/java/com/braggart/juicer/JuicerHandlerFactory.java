@@ -65,11 +65,25 @@ public class JuicerHandlerFactory {
 
     private Function<Class<?>,JuicerHandler> juicerHandlerImpl = clz -> {
         Method[] methods = clz.getMethods();
+        Handler handler = clz.getAnnotation(Handler.class);
         Method hrefMethod = getAnnotationMethod(methods, Href.class);
         Method parserMethod = getAnnotationMethod(methods, Parser.class);
         try {
             return new JuicerHandler() {
-                Object handlerImpl = clz.getConstructor().newInstance();
+
+                private Object handlerImpl = clz.getConstructor().newInstance();
+
+                private String previous = handler.parent();
+
+                @Override
+                public String getParent() {
+                    return previous;
+                }
+
+                @Override
+                public boolean hasParent() {
+                    return !previous.equals("");
+                }
 
                 @Override
                 public JuicerData parse(Connection.Response response, Document document, String html) {

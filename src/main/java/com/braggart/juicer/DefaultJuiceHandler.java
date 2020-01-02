@@ -19,4 +19,14 @@ public class DefaultJuiceHandler implements JuicerHandler {
     public JuicerData parse(Connection.Response response, Document document, String html) {
         return new JuicerData();
     }
+
+    @Override
+    public boolean hasParent() {
+        return false;
+    }
+
+    @Override
+    public String getParent() {
+        return null;
+    }
 }

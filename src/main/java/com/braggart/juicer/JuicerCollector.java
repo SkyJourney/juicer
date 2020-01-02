@@ -27,7 +27,7 @@ public class JuicerCollector {
 
     public List<JuicerData> getDataFromHandler(String handlerBean){
         Headers headers = JsoupDocumentHelper.getSampleHeaders();
-        return getDataFromHandler(handlerBean, null, null);
+        return getDataFromHandler(handlerBean, headers, null);
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers){
@@ -41,10 +41,21 @@ public class JuicerCollector {
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers,JuicerData juicerData){
         JuicerHandler juicerHandler = juicerHandlerFactory.getJuicerHandler(handlerBean);
+        Stream<URL> stream;
+        if(juicerHandler.hasParent() && juicerData==null){
+            stream = this.getDataFromHandler(juicerHandler.getParent(),headers).parallelStream()
+                    .flatMap(preData -> {
+                        if(preData.get("_source")!=null){
+                            headers.put("referer", (String)preData.get("_source"));
+                        }
+                        return juicerHandler.getUrls(preData).stream();
+                    });
+        } else {
+            stream = juicerHandler.getUrls(juicerData).parallelStream();
+        }
         if(juicerData!=null && juicerData.get("_source")!=null){
             headers.put("referer", (String)juicerData.get("_source"));
         }
-        Stream<URL> stream = juicerHandler.getUrls(juicerData).stream();
         return stream.map(URL::toExternalForm)
                 .map(url -> {
                     try {

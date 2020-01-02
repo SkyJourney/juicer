@@ -7,4 +7,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface Handler {
     String value() default "";
+    String parent() default "";
 }
