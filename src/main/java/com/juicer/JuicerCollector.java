@@ -73,7 +73,7 @@ public class JuicerCollector {
                         e.printStackTrace();
                         throw new RuntimeException("Cannot get document.");
                     }
-                    assert document != null;
+                    Objects.requireNonNull(document);
                     String html = document.html();
                     return juicerHandler.parse(response, document, html);
                 }).collect(Collectors.toList());

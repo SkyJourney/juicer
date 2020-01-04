@@ -61,7 +61,7 @@ public class ClassScanner {
 
     /**
      * 从包package中获取所有的Class
-     * @param packageName Package path
+     * @param packageName 包名
      * @return List
      */
     public static List<Class<?>> getClasses(String packageName){
