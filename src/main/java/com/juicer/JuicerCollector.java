@@ -3,7 +3,6 @@ package com.juicer;
 import com.juicer.core.Headers;
 import com.juicer.core.JuicerData;
 import com.juicer.core.JuicerHandler;
-import com.juicer.core.JuicerSource;
 import com.juicer.util.DocumentHelper;
 import org.jsoup.nodes.Document;
 
