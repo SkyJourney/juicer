@@ -5,10 +5,20 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+
 /**
+ * 该类是一个基于Jsoup的静态工具类，封装了获取HTTP响应的基本功能。提供默认请求头，也可以自定义
+ * 请求头。该类对于复杂机制的网站爬取性能较弱。
+ * 获取响应有两种返回类型，一种是完整的响应信息Response，一种是网页数据Document，可以根据请求
+ * 内容切换使用。
+ *
  * @author SkyJourney
+ * @since 1.0
  */
-public class JsoupDocumentHelper {
+public class DocumentHelper {
+
+    private DocumentHelper(){}
+
     public static Headers getSampleHeaders(){
         return Headers.getInstance().defaultHeaders();
     }

@@ -19,9 +19,35 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * 该工厂类是注册Handler的核心组件，通过包名扫描自动添加Handler到工厂中，注解方法被加载为
+ * {@link com.juicer.core.JuicerHandler} 接口的实现。工厂提供动态添加Handler的方法
+ * addJuicerHandler，利用函数式编程添加自定义Handler。 <br>
+ * This factory class is the core component for registering Handlers. Handlers
+ * are automatically added to the factory through package name scanning, and
+ * annotation methods are loaded as implementations of the
+ * {@link com.juicer.core.JuicerHandler} interface. The factory provides the method
+ * addJuicerHandler that dynamically adds Handlers, and uses functional
+ * programming to add custom Handlers. <br>
+ * @author SkyJourney
+ * @since 1.0
+ */
 public class JuicerHandlerFactory {
 
+
+    /**
+     * 私有的线程安全Map对象，用来存储被注册的Handler。通过方法
+     * {@link JuicerHandlerFactory #getJuicerHandler}获取对应对象。键名由
+     * 注解属性决定，若未设定默认为全小写类名。
+     */
     private static Map<String, JuicerHandler> juicerHandlerMap = new ConcurrentHashMap<>();
+
+
+    /**
+     * 默认空构造，只用来生成对象，不加载任何Handler
+     */
+    public JuicerHandlerFactory() {
+    }
 
     public JuicerHandlerFactory(String basePackage) {
         initHandlerClasses(basePackage);
@@ -44,19 +70,19 @@ public class JuicerHandlerFactory {
         );
     }
 
-    private Predicate<Class<?>> isHandler = clz ->  clz.getAnnotation(Handler.class)!=null;
+    private static Predicate<Class<?>> isHandler = clz ->  clz.getAnnotation(Handler.class)!=null;
 
-    private Function<Class<?>,String> findHandlerName = clz -> {
+    private static Function<Class<?>,String> findHandlerName = clz -> {
         Handler handler = clz.getAnnotation(Handler.class);
         String value = handler.value();
-        if (value.equals("")){
+        if ("".equals(value)){
             return clz.getSimpleName().toLowerCase();
         } else {
             return value;
         }
     };
 
-    private Function<Class<?>,JuicerHandler> juicerHandlerImpl = clz -> {
+    private static Function<Class<?>,JuicerHandler> juicerHandlerImpl = clz -> {
         Method[] methods = clz.getMethods();
         Handler handler = clz.getAnnotation(Handler.class);
         Method hrefMethod = HandlerReflectHelper.getAnnotationMethod(methods, Href.class);
@@ -75,24 +101,29 @@ public class JuicerHandlerFactory {
 
                 @Override
                 public boolean hasParent() {
-                    return !previous.equals("");
+                    return !"".equals(previous);
                 }
 
                 @Override
-                public JuicerData parse(Connection.Response response, Document document, String html) {
+                public JuicerData parse(JuicerData juicerData, Connection.Response response, Document document, String html) {
                     try {
                         if(parserMethod!=null){
-                            JuicerData juicerData = (JuicerData)parserMethod.invoke(
+                            if(juicerData==null){
+                                juicerData = new JuicerData();
+                            }
+                            JuicerData juicerData1 = (JuicerData)parserMethod.invoke(
                                     handlerImpl,
                                     HandlerReflectHelper.getRequiredParameter(
                                             HandlerReflectHelper.getParameterType(parserMethod)
+                                            ,juicerData
+                                            ,response
                                             ,document
                                             ,html
                                     )
                             );
-                            if(juicerData != null){
-                                juicerData.put("_source", document.location());
-                                return juicerData;
+                            if(juicerData1 != null){
+                                juicerData1.put("_source", document.location());
+                                return juicerData1;
                             } else {
                                 return null;
                             }
@@ -151,7 +182,7 @@ public class JuicerHandlerFactory {
 
             @Override
             public boolean hasParent() {
-                return !previous.equals("");
+                return !"".equals(previous);
             }
 
             @Override
@@ -160,11 +191,11 @@ public class JuicerHandlerFactory {
             }
 
             @Override
-            public JuicerData parse(Connection.Response response, Document document, String html) {
+            public JuicerData parse(JuicerData juicerData,Connection.Response response, Document document, String html) {
                 Objects.requireNonNull(domParser);
-                JuicerData juicerData =domParser.parse(response, document, html);
-                juicerData.put("_source", document.location());
-                return juicerData;
+                JuicerData juicerData1 =domParser.parse(juicerData ,response, document, html);
+                juicerData1.put("_source", document.location());
+                return juicerData1;
             }
 
             @Override
