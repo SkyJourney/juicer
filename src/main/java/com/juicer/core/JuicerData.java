@@ -13,7 +13,7 @@ public class JuicerData extends HashMap<String,Object> {
         return new JuicerData();
     }
 
-    public JuicerData addData(String key,String value){
+    public JuicerData addData(String key,Object value){
         this.put(key, value);
         return this;
     }
