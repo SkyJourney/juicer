@@ -23,4 +23,8 @@ public class JuicerData extends HashMap<String,Object> {
         return this;
     }
 
+    public String getString(String key){
+        return this.get(key).toString();
+    }
+
 }
