@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class CSVMapParser {
 
-    public static List<Map<String,Object>> getData(Reader CSVReader) throws Exception {
+    public static List<JuicerData> getData(Reader CSVReader) throws Exception {
         BufferedReader bufferedReader = new BufferedReader(CSVReader);
         String[] headers = getHeaders(bufferedReader);
         return getRecords(bufferedReader, headers);
@@ -26,7 +26,7 @@ public class CSVMapParser {
         return CSVReader.readLine().split(",");
     }
 
-    private static List<Map<String,Object>> getRecords(BufferedReader CSVReader, String[] headers) throws Exception {
+    private static List<JuicerData> getRecords(BufferedReader CSVReader, String[] headers) throws Exception {
         CSVFormat format = CSVFormat.DEFAULT.withHeader(headers);
         CSVParser parser = new CSVParser(CSVReader, format);
         List<CSVRecord> records = parser.getRecords();
