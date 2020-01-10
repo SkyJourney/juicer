@@ -1,7 +1,6 @@
 package com.juicer.util;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.net.JarURLConnection;
 import java.net.URL;

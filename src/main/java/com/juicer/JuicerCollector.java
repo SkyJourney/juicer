@@ -13,6 +13,8 @@ import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -24,29 +26,56 @@ public class JuicerCollector {
 
     private JuicerHandlerFactory juicerHandlerFactory;
 
+    private ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+
     public JuicerHandlerFactory getJuicerHandlerFactory() {
         return juicerHandlerFactory;
+    }
+
+    public ForkJoinPool getForkJoinPool() {
+        return forkJoinPool;
     }
 
     public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory) {
         this.juicerHandlerFactory = juicerHandlerFactory;
     }
 
-    public List<JuicerData> getDataFromHandler(String handlerBean){
+    public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
+        this.juicerHandlerFactory = juicerHandlerFactory;
+        this.forkJoinPool = forkJoinPool;
+    }
+
+    public List<JuicerData> getDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean)).get();
+    }
+
+    private List<JuicerData> getData(String handlerBean){
         Headers headers = DocumentHelper.getSampleHeaders();
-        return getDataFromHandler(handlerBean, headers, null);
+        return getData(handlerBean, headers, null);
     }
 
-    public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers){
-        return getDataFromHandler(handlerBean, headers, null);
+    public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean,headers)).get();
     }
 
-    public List<JuicerData> getDataFromHandler(String handlerBean, JuicerData juicerData){
+    private List<JuicerData> getData(String handlerBean, Headers headers){
+        return getData(handlerBean, headers, null);
+    }
+
+    public List<JuicerData> getDataFromHandler(String handlerBean,JuicerData juicerData) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean,juicerData)).get();
+    }
+
+    private List<JuicerData> getData(String handlerBean, JuicerData juicerData){
         Headers headers = DocumentHelper.getSampleHeaders();
-        return getDataFromHandler(handlerBean, headers, juicerData);
+        return getData(handlerBean, headers, juicerData);
     }
 
-    public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers,JuicerData juicerData){
+    public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers, JuicerData juicerData) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean,headers,juicerData)).get();
+    }
+
+    private List<JuicerData> getData(String handlerBean, Headers headers, JuicerData juicerData){
         JuicerHandler juicerHandler = juicerHandlerFactory.getJuicerHandler(handlerBean);
         Stream<Map.Entry<JuicerData,URL>> stream;
         Function<JuicerData, Stream<Map.Entry<JuicerData,URL>>> getUrlsFromParent = preData -> {
@@ -56,7 +85,7 @@ public class JuicerCollector {
             return juicerHandler.getUrls(preData).stream().map(url -> new AbstractMap.SimpleEntry<>(preData, url));
         };
         if(juicerHandler.hasParent() && juicerData==null){
-            stream = this.getDataFromHandler(juicerHandler.getParent(),headers).parallelStream()
+            stream = this.getData(juicerHandler.getParent(),headers).parallelStream()
                     .flatMap(getUrlsFromParent);
         } else {
             stream = juicerHandler.getUrls(juicerData).parallelStream().map(url -> new AbstractMap.SimpleEntry<>(juicerData, url));
