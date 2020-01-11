@@ -87,12 +87,15 @@
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
           <encoding>${project.build.sourceEncoding}</encoding>
+          <compilerArgs>
+            <compilerArg>-parameters</compilerArg>
+          </compilerArgs>
           <showWarnings>true</showWarnings>
         </configuration>
       </plugin>
     </plugins>
   </build>
-  <distributionManagement>
+<!--  <distributionManagement>
     <repository>
       <id>youyue-releases</id>
       <url>http://192.168.0.113:8081/repository/releases/</url>
@@ -101,6 +104,6 @@
       <id>youyue-snapshots</id>
       <url>http://192.168.0.113:8081/repository/snapshots/</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement>-->
 
 </project>
