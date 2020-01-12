@@ -11,6 +11,7 @@ import org.jsoup.nodes.Document;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -55,6 +56,10 @@ public class JuicerHandlerFactory {
 
     public JuicerHandlerFactory(List<String> basePackages) {
         basePackages.forEach(this::initHandlerClasses);
+    }
+
+    public JuicerHandlerFactory(String...basePackages) {
+        Arrays.asList(basePackages).forEach(this::initHandlerClasses);
     }
 
     public JuicerHandler getJuicerHandler(String key){
