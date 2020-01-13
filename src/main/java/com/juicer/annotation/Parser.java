@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 /**
  * 指定Handler实例的网页解析方法，对应{@link com.juicer.core.DomParser}接口中的
  * {@link com.juicer.core.DomParser#parse(JuicerData, Connection.Response, Document, String)}
- * 方法。一个handler实例只允许一个该注解标记的方法。<br/>
+ * 方法。一个handler实例只允许一个该注解标记的方法。<br>
  * Specify the parsing method for web page of the Handler instance, corresponding to the
  * {@link com.juicer.core.DomParser#parse(JuicerData, Connection.Response, Document, String)}
  * method in the {@link com.juicer.core.DomParser} interface. A handler instance allows only
