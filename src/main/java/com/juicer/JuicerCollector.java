@@ -31,7 +31,17 @@ public class JuicerCollector {
 
     private Map<String, String> juicerChain = new ConcurrentHashMap<>();
 
-    private ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+    private static final Properties DEFAULT_INTERRUPT_SETTINGS;
+
+    static {
+        DEFAULT_INTERRUPT_SETTINGS = new Properties();
+        DEFAULT_INTERRUPT_SETTINGS.setProperty("juicer.interrupt.save.allow", "false");
+        DEFAULT_INTERRUPT_SETTINGS.setProperty("juicer.interrupt.save.path", ".");
+    }
+
+    private Properties juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
+
+    private ForkJoinPool forkJoinPool;
 
     public JuicerHandlerFactory getJuicerHandlerFactory() {
         return juicerHandlerFactory;
@@ -42,12 +52,13 @@ public class JuicerCollector {
     }
 
     public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory) {
-        this.juicerHandlerFactory = juicerHandlerFactory;
+        this(juicerHandlerFactory,ForkJoinPool.commonPool());
     }
 
     public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
         this.juicerHandlerFactory = juicerHandlerFactory;
         this.forkJoinPool = forkJoinPool;
+        //init();
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {
