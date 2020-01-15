@@ -1,8 +1,9 @@
-package com.juicer.core;
+package com.juicer;
 
 import com.juicer.annotation.Handler;
 import com.juicer.annotation.Href;
 import com.juicer.annotation.Parser;
+import com.juicer.core.*;
 import com.juicer.util.ClassScanner;
 import com.juicer.util.HandlerReflectHelper;
 import org.jsoup.Connection;

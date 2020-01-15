@@ -1,5 +1,7 @@
 package com.juicer.core;
 
+import com.juicer.JuicerHandlerFactory;
+
 /**
  * 用于生成handler实例的接口，继承了 {@link com.juicer.core.HrefSupplier} 和
  * {@link com.juicer.core.DomParser} 两个接口，并要求了链式上级元素的判断和提取
