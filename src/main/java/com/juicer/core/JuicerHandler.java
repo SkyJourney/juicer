@@ -3,12 +3,12 @@ package com.juicer.core;
 /**
  * 用于生成handler实例的接口，继承了 {@link com.juicer.core.HrefSupplier} 和
  * {@link com.juicer.core.DomParser} 两个接口，并要求了链式上级元素的判断和提取
- * 方法。其实例通过 {@link com.juicer.JuicerHandlerFactory} 生成。 <br>
+ * 方法。其实例通过 {@link JuicerHandlerFactory} 生成。 <br>
  * The interface is used to generate the handler instance. it inherits the
  * two interfaces {@link com.juicer.core.HrefSupplier} and
  * {@link com.juicer.core.DomParser}, and requires the judgment method and
  * getter method of the chained superior element. Its instance is generated
- * by {@link com.juicer.JuicerHandlerFactory}.
+ * by {@link JuicerHandlerFactory}.
  * @author SkyJourney
  * @since 1.0
  */

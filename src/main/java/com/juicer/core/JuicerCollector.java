@@ -1,9 +1,5 @@
-package com.juicer;
+package com.juicer.core;
 
-import com.juicer.core.Headers;
-import com.juicer.core.JuicerData;
-import com.juicer.core.JuicerHandler;
-import com.juicer.core.JuicerTask;
 import com.juicer.util.DocumentHelper;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
@@ -25,11 +21,11 @@ public class JuicerCollector {
 
     private JuicerHandlerFactory juicerHandlerFactory;
 
-    private Map<String ,Map<URL, JuicerTask>> juicerTaskQueue = new ConcurrentHashMap<>();
+    private RuntimeStorage runtimeStorage = RuntimeStorage.getInstance();
 
-    private Map<String, List<JuicerData>> juicerResultStorage = new ConcurrentHashMap<>();
-
-    private Map<String, String> juicerChain = new ConcurrentHashMap<>();
+    public RuntimeStorage getRuntimeStorage() {
+        return runtimeStorage;
+    }
 
     private static final Properties DEFAULT_INTERRUPT_SETTINGS;
 
@@ -98,31 +94,31 @@ public class JuicerCollector {
             if(preData!=null && preData.get("_source")!=null){
                 headers.put("referer", (String)preData.get("_source"));
             }
-            juicerTaskQueue.put(handlerBean, new ConcurrentHashMap<>(16));
+            runtimeStorage.getJuicerTaskQueue().put(handlerBean, new ConcurrentHashMap<>(16));
             return juicerHandler.getUrls(preData)
                     .stream()
                     .map(url -> {
-                        juicerTaskQueue.get(handlerBean)
+                        runtimeStorage.getJuicerTaskQueue().get(handlerBean)
                                 .put(url, new JuicerTask(url
-                                        , juicerChain.get(handlerBean)
+                                        , runtimeStorage.getJuicerChain().get(handlerBean)
                                         , false));
                         return new AbstractMap.SimpleEntry<>(preData, url);
                     });
         };
         if(juicerHandler.hasParent()
                 && juicerData==null){
-            juicerChain.put(juicerHandler.getParent(), handlerBean);
+            runtimeStorage.getJuicerChain().put(juicerHandler.getParent(), handlerBean);
             stream = this.getData(juicerHandler.getParent(),headers)
                     .parallelStream()
                     .flatMap(getUrlsFromParent);
         } else {
-            juicerTaskQueue.put(handlerBean, new ConcurrentHashMap<>(16));
+            runtimeStorage.getJuicerTaskQueue().put(handlerBean, new ConcurrentHashMap<>(16));
             stream = juicerHandler.getUrls(juicerData)
                     .parallelStream()
                     .map(url -> {
-                        juicerTaskQueue.get(handlerBean)
+                        runtimeStorage.getJuicerTaskQueue().get(handlerBean)
                                 .put(url, new JuicerTask(url
-                                        , juicerChain.get(handlerBean)
+                                        , runtimeStorage.getJuicerChain().get(handlerBean)
                                         , false));
                         return new AbstractMap.SimpleEntry<>(juicerData, url);
                     });
@@ -130,7 +126,7 @@ public class JuicerCollector {
         if(juicerData!=null && juicerData.get("_source")!=null){
             headers.put("referer", (String)juicerData.get("_source"));
         }
-        juicerResultStorage.put(handlerBean, stream
+        runtimeStorage.getJuicerResultStorage().put(handlerBean, stream
                 .map(entry -> {
                     Connection.Response response;
                     try {
@@ -155,11 +151,11 @@ public class JuicerCollector {
                     } else {
                         resultData = juicerHandler.parse(JuicerData.getInstance(), response, document, html);
                     }
-                    juicerTaskQueue.get(handlerBean).get(entry.getValue()).setFinished(true);
+                    runtimeStorage.getJuicerTaskQueue().get(handlerBean).get(entry.getValue()).setFinished(true);
                     return resultData;
                 }).collect(Collectors.toList())
         );
-        juicerTaskQueue.remove(handlerBean);
-        return juicerResultStorage.get(handlerBean);
+        runtimeStorage.getJuicerTaskQueue().remove(handlerBean);
+        return runtimeStorage.getJuicerResultStorage().get(handlerBean);
     }
 }

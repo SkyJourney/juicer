@@ -24,7 +24,6 @@ public class PropertiesUtils {
         InputStream in = null;
         try{
             Properties prop = new Properties();
-            //InputStream in = Object.class.getResourceAsStream("/"+fileName);
             in = PropertiesUtils.class.getClassLoader().getResourceAsStream(fileName);
             if(in == null){
                 return null;
