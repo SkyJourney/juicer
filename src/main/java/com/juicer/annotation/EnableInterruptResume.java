@@ -10,8 +10,10 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EnableBreakpointResume {
+public @interface EnableInterruptResume {
 
-    String path() default ".";
+    String savePath() default ".";
+
+    String importProperties() default "juicer.properties";
 
 }

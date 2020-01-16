@@ -1,6 +1,7 @@
 package com.juicer.core;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -65,23 +66,27 @@ public class RuntimeStorage {
     }
 
     public void putJuicerTask(String handler, URL url, JuicerTask juicerTask) {
-        Optional.ofNullable(getHandlerTaskQueue(handler))
-                .orElse(addHandlerTaskQueue(handler))
-                .put(url, juicerTask);
+        getHandlerTaskQueue(handler).put(url, juicerTask);
     }
 
     public JuicerTask getJuicerTask(String handler, URL url) {
-        return Optional.ofNullable(getHandlerTaskQueue(handler))
-                .flatMap(taskQueue -> Optional.ofNullable(taskQueue.get(url)))
-                .orElse(null);
+        return getHandlerTaskQueue(handler).get(url);
     }
 
-    public void putJuicerResult(String handler, List<JuicerData> juicerDataSet){
-        juicerResultStorage.put(handler, juicerDataSet);
+    public void putJuicerData(String handler, JuicerData juicerData){
+        juicerResultStorage.get(handler).add(juicerData);
+    }
+
+    public void addJuicerResult(String handler){
+        juicerResultStorage.put(handler, new ArrayList<>());
     }
 
     public List<JuicerData> getJuicerResult(String handler){
         return juicerResultStorage.get(handler);
+    }
+
+    public boolean isResultExist(String handler) {
+        return juicerResultStorage.get(handler)!=null;
     }
 
 }

@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 /**
  * @author SkyJourney
  */
-public class JuicerCollector {
+public abstract class AbstractJuicerCollector {
 
     private JuicerHandlerFactory juicerHandlerFactory;
 
@@ -38,11 +38,7 @@ public class JuicerCollector {
         return forkJoinPool;
     }
 
-    public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory) {
-        this(juicerHandlerFactory,ForkJoinPool.commonPool());
-    }
-
-    public JuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
+    public AbstractJuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
         this.juicerHandlerFactory = juicerHandlerFactory;
         this.forkJoinPool = forkJoinPool;
         //init();
@@ -79,6 +75,9 @@ public class JuicerCollector {
     }
 
     private List<JuicerData> getData(String handlerBean, Headers headers, JuicerData juicerData){
+        if(runtimeStorage.isResultExist(handlerBean)){
+            return runtimeStorage.getJuicerResult(handlerBean);
+        }
         JuicerHandler juicerHandler = juicerHandlerFactory.getJuicerHandler(handlerBean);
         Stream<Map.Entry<JuicerData,URL>> stream;
         Function<JuicerData, Stream<Map.Entry<JuicerData,URL>>> getUrlsFromParent = preData -> {
@@ -117,41 +116,41 @@ public class JuicerCollector {
                                         , false
                                 )
                         );
+                        System.out.println(runtimeStorage.getJuicerTaskQueue());
                         return new AbstractMap.SimpleEntry<>(juicerData, url);
                     });
         }
         if(juicerData!=null && juicerData.get("_source")!=null){
             headers.put("referer", (String)juicerData.get("_source"));
         }
-        runtimeStorage.putJuicerResult(handlerBean, stream
-                .map(entry -> {
-                    Connection.Response response;
-                    try {
-                        response = DocumentHelper.getResponse(entry.getValue().toExternalForm(), headers);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        throw new RuntimeException("Cannot get response.");
-                    }
-                    Objects.requireNonNull(response);
-                    Document document;
-                    try {
-                        document = response.parse();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        throw new RuntimeException("Cannot get document.");
-                    }
-                    Objects.requireNonNull(document);
-                    String html = document.html();
-                    JuicerData resultData;
-                    if(entry.getKey()!=null){
-                        resultData = juicerHandler.parse(JuicerData.getInstance().addData(entry.getKey()), response, document, html);
-                    } else {
-                        resultData = juicerHandler.parse(JuicerData.getInstance(), response, document, html);
-                    }
-                    runtimeStorage.getJuicerTask(handlerBean,entry.getValue()).setFinished(true);
-                    return resultData;
-                }).collect(Collectors.toList())
-        );
+        runtimeStorage.addJuicerResult(handlerBean);
+        stream.map(entry -> {
+            Connection.Response response;
+            try {
+                response = DocumentHelper.getResponse(entry.getValue().toExternalForm(), headers);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("Cannot get response.");
+            }
+            Objects.requireNonNull(response);
+            Document document;
+            try {
+                document = response.parse();
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Cannot get document.");
+            }
+            Objects.requireNonNull(document);
+            String html = document.html();
+            JuicerData resultData;
+            if(entry.getKey()!=null){
+                resultData = juicerHandler.parse(JuicerData.getInstance().addData(entry.getKey()), response, document, html);
+            } else {
+                resultData = juicerHandler.parse(JuicerData.getInstance(), response, document, html);
+            }
+            runtimeStorage.getJuicerTask(handlerBean, entry.getValue()).setFinished(true);
+            return resultData;
+        }).forEach(juicerData1 -> runtimeStorage.putJuicerData(handlerBean, juicerData1));
         runtimeStorage.removeHandlerTaskQueue(handlerBean);
         return runtimeStorage.getJuicerResult(handlerBean);
     }

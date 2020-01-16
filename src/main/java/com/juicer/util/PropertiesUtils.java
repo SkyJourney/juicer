@@ -123,4 +123,10 @@ public class PropertiesUtils {
             }
         }
     }
+
+    public static void putProperties(Properties target, Properties addIns) {
+        if(addIns!=null) {
+            addIns.forEach(target::put);
+        }
+    }
 }
