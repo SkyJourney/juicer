@@ -10,6 +10,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EnableInterruptResume {
+public @interface EnableDataPersistence {
     boolean enable() default true;
 }

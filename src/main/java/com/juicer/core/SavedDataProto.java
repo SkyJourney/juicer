@@ -3,8 +3,8 @@
 
 package com.juicer.core;
 
-public final class ShutdownData {
-  private ShutdownData() {}
+public final class SavedDataProto {
+  private SavedDataProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -128,15 +128,15 @@ public final class ShutdownData {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.juicer.core.ShutdownData.internal_static_JuicerTask_descriptor;
+      return SavedDataProto.internal_static_JuicerTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.juicer.core.ShutdownData.internal_static_JuicerTask_fieldAccessorTable
+      return SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.juicer.core.ShutdownData.JuicerTask.class, com.juicer.core.ShutdownData.JuicerTask.Builder.class);
+              SavedDataProto.JuicerTask.class, SavedDataProto.JuicerTask.Builder.class);
     }
 
     public static final int URL_FIELD_NUMBER = 1;
@@ -268,10 +268,10 @@ public final class ShutdownData {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.juicer.core.ShutdownData.JuicerTask)) {
+      if (!(obj instanceof SavedDataProto.JuicerTask)) {
         return super.equals(obj);
       }
-      com.juicer.core.ShutdownData.JuicerTask other = (com.juicer.core.ShutdownData.JuicerTask) obj;
+      SavedDataProto.JuicerTask other = (SavedDataProto.JuicerTask) obj;
 
       if (!getUrl()
           .equals(other.getUrl())) return false;
@@ -302,69 +302,69 @@ public final class ShutdownData {
       return hash;
     }
 
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(byte[] data)
+    public static SavedDataProto.JuicerTask parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(java.io.InputStream input)
+    public static SavedDataProto.JuicerTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseDelimitedFrom(java.io.InputStream input)
+    public static SavedDataProto.JuicerTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseDelimitedFrom(
+    public static SavedDataProto.JuicerTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerTask parseFrom(
+    public static SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -377,7 +377,7 @@ public final class ShutdownData {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.juicer.core.ShutdownData.JuicerTask prototype) {
+    public static Builder newBuilder(SavedDataProto.JuicerTask prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -398,18 +398,18 @@ public final class ShutdownData {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:JuicerTask)
-        com.juicer.core.ShutdownData.JuicerTaskOrBuilder {
+        SavedDataProto.JuicerTaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerTask_descriptor;
+        return SavedDataProto.internal_static_JuicerTask_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerTask_fieldAccessorTable
+        return SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.juicer.core.ShutdownData.JuicerTask.class, com.juicer.core.ShutdownData.JuicerTask.Builder.class);
+                SavedDataProto.JuicerTask.class, SavedDataProto.JuicerTask.Builder.class);
       }
 
       // Construct using com.juicer.core.ShutdownData.JuicerTask.newBuilder()
@@ -442,17 +442,17 @@ public final class ShutdownData {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerTask_descriptor;
+        return SavedDataProto.internal_static_JuicerTask_descriptor;
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerTask getDefaultInstanceForType() {
-        return com.juicer.core.ShutdownData.JuicerTask.getDefaultInstance();
+      public SavedDataProto.JuicerTask getDefaultInstanceForType() {
+        return SavedDataProto.JuicerTask.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerTask build() {
-        com.juicer.core.ShutdownData.JuicerTask result = buildPartial();
+      public SavedDataProto.JuicerTask build() {
+        SavedDataProto.JuicerTask result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -460,8 +460,8 @@ public final class ShutdownData {
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerTask buildPartial() {
-        com.juicer.core.ShutdownData.JuicerTask result = new com.juicer.core.ShutdownData.JuicerTask(this);
+      public SavedDataProto.JuicerTask buildPartial() {
+        SavedDataProto.JuicerTask result = new SavedDataProto.JuicerTask(this);
         result.url_ = url_;
         result.next_ = next_;
         result.isFinished_ = isFinished_;
@@ -503,16 +503,16 @@ public final class ShutdownData {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.juicer.core.ShutdownData.JuicerTask) {
-          return mergeFrom((com.juicer.core.ShutdownData.JuicerTask)other);
+        if (other instanceof SavedDataProto.JuicerTask) {
+          return mergeFrom((SavedDataProto.JuicerTask)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.juicer.core.ShutdownData.JuicerTask other) {
-        if (other == com.juicer.core.ShutdownData.JuicerTask.getDefaultInstance()) return this;
+      public Builder mergeFrom(SavedDataProto.JuicerTask other) {
+        if (other == SavedDataProto.JuicerTask.getDefaultInstance()) return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           onChanged();
@@ -539,11 +539,11 @@ public final class ShutdownData {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.juicer.core.ShutdownData.JuicerTask parsedMessage = null;
+        SavedDataProto.JuicerTask parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.juicer.core.ShutdownData.JuicerTask) e.getUnfinishedMessage();
+          parsedMessage = (SavedDataProto.JuicerTask) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -733,12 +733,12 @@ public final class ShutdownData {
     }
 
     // @@protoc_insertion_point(class_scope:JuicerTask)
-    private static final com.juicer.core.ShutdownData.JuicerTask DEFAULT_INSTANCE;
+    private static final SavedDataProto.JuicerTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.juicer.core.ShutdownData.JuicerTask();
+      DEFAULT_INSTANCE = new SavedDataProto.JuicerTask();
     }
 
-    public static com.juicer.core.ShutdownData.JuicerTask getDefaultInstance() {
+    public static SavedDataProto.JuicerTask getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -763,7 +763,7 @@ public final class ShutdownData {
     }
 
     @java.lang.Override
-    public com.juicer.core.ShutdownData.JuicerTask getDefaultInstanceForType() {
+    public SavedDataProto.JuicerTask getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -786,25 +786,25 @@ public final class ShutdownData {
      * Use {@link #getTaskMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+    java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
     getTask();
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+    java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
     getTaskMap();
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    com.juicer.core.ShutdownData.JuicerTask getTaskOrDefault(
+    SavedDataProto.JuicerTask getTaskOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.JuicerTask defaultValue);
+        SavedDataProto.JuicerTask defaultValue);
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    com.juicer.core.ShutdownData.JuicerTask getTaskOrThrow(
+    SavedDataProto.JuicerTask getTaskOrThrow(
         java.lang.String key);
   }
   /**
@@ -859,7 +859,7 @@ public final class ShutdownData {
                     TaskDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.JuicerTask>
               task__ = input.readMessage(
                   TaskDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               task_.getMutableMap().put(
@@ -887,7 +887,7 @@ public final class ShutdownData {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.juicer.core.ShutdownData.internal_static_SingleTask_descriptor;
+      return SavedDataProto.internal_static_SingleTask_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -905,26 +905,26 @@ public final class ShutdownData {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.juicer.core.ShutdownData.internal_static_SingleTask_fieldAccessorTable
+      return SavedDataProto.internal_static_SingleTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.juicer.core.ShutdownData.SingleTask.class, com.juicer.core.ShutdownData.SingleTask.Builder.class);
+              SavedDataProto.SingleTask.class, SavedDataProto.SingleTask.Builder.class);
     }
 
     public static final int TASK_FIELD_NUMBER = 1;
     private static final class TaskDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, com.juicer.core.ShutdownData.JuicerTask> defaultEntry =
+          java.lang.String, SavedDataProto.JuicerTask> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>newDefaultInstance(
-                  com.juicer.core.ShutdownData.internal_static_SingleTask_TaskEntry_descriptor, 
+              .<java.lang.String, SavedDataProto.JuicerTask>newDefaultInstance(
+                  SavedDataProto.internal_static_SingleTask_TaskEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.juicer.core.ShutdownData.JuicerTask.getDefaultInstance());
+                  SavedDataProto.JuicerTask.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, com.juicer.core.ShutdownData.JuicerTask> task_;
-    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+        java.lang.String, SavedDataProto.JuicerTask> task_;
+    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
     internalGetTask() {
       if (task_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -949,25 +949,25 @@ public final class ShutdownData {
      * Use {@link #getTaskMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> getTask() {
+    public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTask() {
       return getTaskMap();
     }
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> getTaskMap() {
+    public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTaskMap() {
       return internalGetTask().getMap();
     }
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public com.juicer.core.ShutdownData.JuicerTask getTaskOrDefault(
+    public SavedDataProto.JuicerTask getTaskOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.JuicerTask defaultValue) {
+        SavedDataProto.JuicerTask defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> map =
+      java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
           internalGetTask().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -975,10 +975,10 @@ public final class ShutdownData {
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public com.juicer.core.ShutdownData.JuicerTask getTaskOrThrow(
+    public SavedDataProto.JuicerTask getTaskOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> map =
+      java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
           internalGetTask().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1015,9 +1015,9 @@ public final class ShutdownData {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> entry
+      for (java.util.Map.Entry<java.lang.String, SavedDataProto.JuicerTask> entry
            : internalGetTask().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.JuicerTask>
         task__ = TaskDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1035,10 +1035,10 @@ public final class ShutdownData {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.juicer.core.ShutdownData.SingleTask)) {
+      if (!(obj instanceof SavedDataProto.SingleTask)) {
         return super.equals(obj);
       }
-      com.juicer.core.ShutdownData.SingleTask other = (com.juicer.core.ShutdownData.SingleTask) obj;
+      SavedDataProto.SingleTask other = (SavedDataProto.SingleTask) obj;
 
       if (!internalGetTask().equals(
           other.internalGetTask())) return false;
@@ -1062,69 +1062,69 @@ public final class ShutdownData {
       return hash;
     }
 
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(byte[] data)
+    public static SavedDataProto.SingleTask parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(java.io.InputStream input)
+    public static SavedDataProto.SingleTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseDelimitedFrom(java.io.InputStream input)
+    public static SavedDataProto.SingleTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseDelimitedFrom(
+    public static SavedDataProto.SingleTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleTask parseFrom(
+    public static SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1137,7 +1137,7 @@ public final class ShutdownData {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.juicer.core.ShutdownData.SingleTask prototype) {
+    public static Builder newBuilder(SavedDataProto.SingleTask prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1158,10 +1158,10 @@ public final class ShutdownData {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SingleTask)
-        com.juicer.core.ShutdownData.SingleTaskOrBuilder {
+        SavedDataProto.SingleTaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.juicer.core.ShutdownData.internal_static_SingleTask_descriptor;
+        return SavedDataProto.internal_static_SingleTask_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1189,9 +1189,9 @@ public final class ShutdownData {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.juicer.core.ShutdownData.internal_static_SingleTask_fieldAccessorTable
+        return SavedDataProto.internal_static_SingleTask_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.juicer.core.ShutdownData.SingleTask.class, com.juicer.core.ShutdownData.SingleTask.Builder.class);
+                SavedDataProto.SingleTask.class, SavedDataProto.SingleTask.Builder.class);
       }
 
       // Construct using com.juicer.core.ShutdownData.SingleTask.newBuilder()
@@ -1219,17 +1219,17 @@ public final class ShutdownData {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.juicer.core.ShutdownData.internal_static_SingleTask_descriptor;
+        return SavedDataProto.internal_static_SingleTask_descriptor;
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleTask getDefaultInstanceForType() {
-        return com.juicer.core.ShutdownData.SingleTask.getDefaultInstance();
+      public SavedDataProto.SingleTask getDefaultInstanceForType() {
+        return SavedDataProto.SingleTask.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleTask build() {
-        com.juicer.core.ShutdownData.SingleTask result = buildPartial();
+      public SavedDataProto.SingleTask build() {
+        SavedDataProto.SingleTask result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1237,8 +1237,8 @@ public final class ShutdownData {
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleTask buildPartial() {
-        com.juicer.core.ShutdownData.SingleTask result = new com.juicer.core.ShutdownData.SingleTask(this);
+      public SavedDataProto.SingleTask buildPartial() {
+        SavedDataProto.SingleTask result = new SavedDataProto.SingleTask(this);
         int from_bitField0_ = bitField0_;
         result.task_ = internalGetTask();
         result.task_.makeImmutable();
@@ -1280,16 +1280,16 @@ public final class ShutdownData {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.juicer.core.ShutdownData.SingleTask) {
-          return mergeFrom((com.juicer.core.ShutdownData.SingleTask)other);
+        if (other instanceof SavedDataProto.SingleTask) {
+          return mergeFrom((SavedDataProto.SingleTask)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.juicer.core.ShutdownData.SingleTask other) {
-        if (other == com.juicer.core.ShutdownData.SingleTask.getDefaultInstance()) return this;
+      public Builder mergeFrom(SavedDataProto.SingleTask other) {
+        if (other == SavedDataProto.SingleTask.getDefaultInstance()) return this;
         internalGetMutableTask().mergeFrom(
             other.internalGetTask());
         this.mergeUnknownFields(other.unknownFields);
@@ -1307,11 +1307,11 @@ public final class ShutdownData {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.juicer.core.ShutdownData.SingleTask parsedMessage = null;
+        SavedDataProto.SingleTask parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.juicer.core.ShutdownData.SingleTask) e.getUnfinishedMessage();
+          parsedMessage = (SavedDataProto.SingleTask) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1323,8 +1323,8 @@ public final class ShutdownData {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.String, com.juicer.core.ShutdownData.JuicerTask> task_;
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+          java.lang.String, SavedDataProto.JuicerTask> task_;
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
       internalGetTask() {
         if (task_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -1332,7 +1332,7 @@ public final class ShutdownData {
         }
         return task_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
       internalGetMutableTask() {
         onChanged();;
         if (task_ == null) {
@@ -1361,25 +1361,25 @@ public final class ShutdownData {
        * Use {@link #getTaskMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> getTask() {
+      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTask() {
         return getTaskMap();
       }
       /**
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> getTaskMap() {
+      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTaskMap() {
         return internalGetTask().getMap();
       }
       /**
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public com.juicer.core.ShutdownData.JuicerTask getTaskOrDefault(
+      public SavedDataProto.JuicerTask getTaskOrDefault(
           java.lang.String key,
-          com.juicer.core.ShutdownData.JuicerTask defaultValue) {
+          SavedDataProto.JuicerTask defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> map =
+        java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
             internalGetTask().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -1387,10 +1387,10 @@ public final class ShutdownData {
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public com.juicer.core.ShutdownData.JuicerTask getTaskOrThrow(
+      public SavedDataProto.JuicerTask getTaskOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> map =
+        java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
             internalGetTask().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -1418,7 +1418,7 @@ public final class ShutdownData {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask>
+      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
       getMutableTask() {
         return internalGetMutableTask().getMutableMap();
       }
@@ -1427,7 +1427,7 @@ public final class ShutdownData {
        */
       public Builder putTask(
           java.lang.String key,
-          com.juicer.core.ShutdownData.JuicerTask value) {
+          SavedDataProto.JuicerTask value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTask().getMutableMap()
@@ -1439,7 +1439,7 @@ public final class ShutdownData {
        */
 
       public Builder putAllTask(
-          java.util.Map<java.lang.String, com.juicer.core.ShutdownData.JuicerTask> values) {
+          java.util.Map<java.lang.String, SavedDataProto.JuicerTask> values) {
         internalGetMutableTask().getMutableMap()
             .putAll(values);
         return this;
@@ -1461,12 +1461,12 @@ public final class ShutdownData {
     }
 
     // @@protoc_insertion_point(class_scope:SingleTask)
-    private static final com.juicer.core.ShutdownData.SingleTask DEFAULT_INSTANCE;
+    private static final SavedDataProto.SingleTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.juicer.core.ShutdownData.SingleTask();
+      DEFAULT_INSTANCE = new SavedDataProto.SingleTask();
     }
 
-    public static com.juicer.core.ShutdownData.SingleTask getDefaultInstance() {
+    public static SavedDataProto.SingleTask getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1491,7 +1491,7 @@ public final class ShutdownData {
     }
 
     @java.lang.Override
-    public com.juicer.core.ShutdownData.SingleTask getDefaultInstanceForType() {
+    public SavedDataProto.SingleTask getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1615,7 +1615,7 @@ public final class ShutdownData {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.juicer.core.ShutdownData.internal_static_JuicerData_descriptor;
+      return SavedDataProto.internal_static_JuicerData_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -1633,9 +1633,9 @@ public final class ShutdownData {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.juicer.core.ShutdownData.internal_static_JuicerData_fieldAccessorTable
+      return SavedDataProto.internal_static_JuicerData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.juicer.core.ShutdownData.JuicerData.class, com.juicer.core.ShutdownData.JuicerData.Builder.class);
+              SavedDataProto.JuicerData.class, SavedDataProto.JuicerData.Builder.class);
     }
 
     public static final int DATA_FIELD_NUMBER = 1;
@@ -1644,7 +1644,7 @@ public final class ShutdownData {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.juicer.core.ShutdownData.internal_static_JuicerData_DataEntry_descriptor, 
+                  SavedDataProto.internal_static_JuicerData_DataEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -1763,10 +1763,10 @@ public final class ShutdownData {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.juicer.core.ShutdownData.JuicerData)) {
+      if (!(obj instanceof SavedDataProto.JuicerData)) {
         return super.equals(obj);
       }
-      com.juicer.core.ShutdownData.JuicerData other = (com.juicer.core.ShutdownData.JuicerData) obj;
+      SavedDataProto.JuicerData other = (SavedDataProto.JuicerData) obj;
 
       if (!internalGetData().equals(
           other.internalGetData())) return false;
@@ -1790,69 +1790,69 @@ public final class ShutdownData {
       return hash;
     }
 
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(byte[] data)
+    public static SavedDataProto.JuicerData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(java.io.InputStream input)
+    public static SavedDataProto.JuicerData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseDelimitedFrom(java.io.InputStream input)
+    public static SavedDataProto.JuicerData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseDelimitedFrom(
+    public static SavedDataProto.JuicerData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.JuicerData parseFrom(
+    public static SavedDataProto.JuicerData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1865,7 +1865,7 @@ public final class ShutdownData {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.juicer.core.ShutdownData.JuicerData prototype) {
+    public static Builder newBuilder(SavedDataProto.JuicerData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1886,10 +1886,10 @@ public final class ShutdownData {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:JuicerData)
-        com.juicer.core.ShutdownData.JuicerDataOrBuilder {
+        SavedDataProto.JuicerDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerData_descriptor;
+        return SavedDataProto.internal_static_JuicerData_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1917,9 +1917,9 @@ public final class ShutdownData {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerData_fieldAccessorTable
+        return SavedDataProto.internal_static_JuicerData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.juicer.core.ShutdownData.JuicerData.class, com.juicer.core.ShutdownData.JuicerData.Builder.class);
+                SavedDataProto.JuicerData.class, SavedDataProto.JuicerData.Builder.class);
       }
 
       // Construct using com.juicer.core.ShutdownData.JuicerData.newBuilder()
@@ -1947,17 +1947,17 @@ public final class ShutdownData {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.juicer.core.ShutdownData.internal_static_JuicerData_descriptor;
+        return SavedDataProto.internal_static_JuicerData_descriptor;
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerData getDefaultInstanceForType() {
-        return com.juicer.core.ShutdownData.JuicerData.getDefaultInstance();
+      public SavedDataProto.JuicerData getDefaultInstanceForType() {
+        return SavedDataProto.JuicerData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerData build() {
-        com.juicer.core.ShutdownData.JuicerData result = buildPartial();
+      public SavedDataProto.JuicerData build() {
+        SavedDataProto.JuicerData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1965,8 +1965,8 @@ public final class ShutdownData {
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.JuicerData buildPartial() {
-        com.juicer.core.ShutdownData.JuicerData result = new com.juicer.core.ShutdownData.JuicerData(this);
+      public SavedDataProto.JuicerData buildPartial() {
+        SavedDataProto.JuicerData result = new SavedDataProto.JuicerData(this);
         int from_bitField0_ = bitField0_;
         result.data_ = internalGetData();
         result.data_.makeImmutable();
@@ -2008,16 +2008,16 @@ public final class ShutdownData {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.juicer.core.ShutdownData.JuicerData) {
-          return mergeFrom((com.juicer.core.ShutdownData.JuicerData)other);
+        if (other instanceof SavedDataProto.JuicerData) {
+          return mergeFrom((SavedDataProto.JuicerData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.juicer.core.ShutdownData.JuicerData other) {
-        if (other == com.juicer.core.ShutdownData.JuicerData.getDefaultInstance()) return this;
+      public Builder mergeFrom(SavedDataProto.JuicerData other) {
+        if (other == SavedDataProto.JuicerData.getDefaultInstance()) return this;
         internalGetMutableData().mergeFrom(
             other.internalGetData());
         this.mergeUnknownFields(other.unknownFields);
@@ -2035,11 +2035,11 @@ public final class ShutdownData {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.juicer.core.ShutdownData.JuicerData parsedMessage = null;
+        SavedDataProto.JuicerData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.juicer.core.ShutdownData.JuicerData) e.getUnfinishedMessage();
+          parsedMessage = (SavedDataProto.JuicerData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2189,12 +2189,12 @@ public final class ShutdownData {
     }
 
     // @@protoc_insertion_point(class_scope:JuicerData)
-    private static final com.juicer.core.ShutdownData.JuicerData DEFAULT_INSTANCE;
+    private static final SavedDataProto.JuicerData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.juicer.core.ShutdownData.JuicerData();
+      DEFAULT_INSTANCE = new SavedDataProto.JuicerData();
     }
 
-    public static com.juicer.core.ShutdownData.JuicerData getDefaultInstance() {
+    public static SavedDataProto.JuicerData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2219,7 +2219,7 @@ public final class ShutdownData {
     }
 
     @java.lang.Override
-    public com.juicer.core.ShutdownData.JuicerData getDefaultInstanceForType() {
+    public SavedDataProto.JuicerData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2232,12 +2232,12 @@ public final class ShutdownData {
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    java.util.List<com.juicer.core.ShutdownData.JuicerData> 
+    java.util.List<SavedDataProto.JuicerData>
         getResultList();
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    com.juicer.core.ShutdownData.JuicerData getResult(int index);
+    SavedDataProto.JuicerData getResult(int index);
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
@@ -2245,12 +2245,12 @@ public final class ShutdownData {
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    java.util.List<? extends com.juicer.core.ShutdownData.JuicerDataOrBuilder> 
+    java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
         getResultOrBuilderList();
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    com.juicer.core.ShutdownData.JuicerDataOrBuilder getResultOrBuilder(
+    SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
         int index);
   }
   /**
@@ -2302,11 +2302,11 @@ public final class ShutdownData {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                result_ = new java.util.ArrayList<com.juicer.core.ShutdownData.JuicerData>();
+                result_ = new java.util.ArrayList<SavedDataProto.JuicerData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               result_.add(
-                  input.readMessage(com.juicer.core.ShutdownData.JuicerData.parser(), extensionRegistry));
+                  input.readMessage(SavedDataProto.JuicerData.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -2333,29 +2333,29 @@ public final class ShutdownData {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.juicer.core.ShutdownData.internal_static_SingleResult_descriptor;
+      return SavedDataProto.internal_static_SingleResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.juicer.core.ShutdownData.internal_static_SingleResult_fieldAccessorTable
+      return SavedDataProto.internal_static_SingleResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.juicer.core.ShutdownData.SingleResult.class, com.juicer.core.ShutdownData.SingleResult.Builder.class);
+              SavedDataProto.SingleResult.class, SavedDataProto.SingleResult.Builder.class);
     }
 
     public static final int RESULT_FIELD_NUMBER = 1;
-    private java.util.List<com.juicer.core.ShutdownData.JuicerData> result_;
+    private java.util.List<SavedDataProto.JuicerData> result_;
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    public java.util.List<com.juicer.core.ShutdownData.JuicerData> getResultList() {
+    public java.util.List<SavedDataProto.JuicerData> getResultList() {
       return result_;
     }
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    public java.util.List<? extends com.juicer.core.ShutdownData.JuicerDataOrBuilder> 
+    public java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
         getResultOrBuilderList() {
       return result_;
     }
@@ -2368,13 +2368,13 @@ public final class ShutdownData {
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    public com.juicer.core.ShutdownData.JuicerData getResult(int index) {
+    public SavedDataProto.JuicerData getResult(int index) {
       return result_.get(index);
     }
     /**
      * <code>repeated .JuicerData result = 1;</code>
      */
-    public com.juicer.core.ShutdownData.JuicerDataOrBuilder getResultOrBuilder(
+    public SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
         int index) {
       return result_.get(index);
     }
@@ -2419,10 +2419,10 @@ public final class ShutdownData {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.juicer.core.ShutdownData.SingleResult)) {
+      if (!(obj instanceof SavedDataProto.SingleResult)) {
         return super.equals(obj);
       }
-      com.juicer.core.ShutdownData.SingleResult other = (com.juicer.core.ShutdownData.SingleResult) obj;
+      SavedDataProto.SingleResult other = (SavedDataProto.SingleResult) obj;
 
       if (!getResultList()
           .equals(other.getResultList())) return false;
@@ -2446,69 +2446,69 @@ public final class ShutdownData {
       return hash;
     }
 
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(byte[] data)
+    public static SavedDataProto.SingleResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(java.io.InputStream input)
+    public static SavedDataProto.SingleResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseDelimitedFrom(java.io.InputStream input)
+    public static SavedDataProto.SingleResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseDelimitedFrom(
+    public static SavedDataProto.SingleResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SingleResult parseFrom(
+    public static SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2521,7 +2521,7 @@ public final class ShutdownData {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.juicer.core.ShutdownData.SingleResult prototype) {
+    public static Builder newBuilder(SavedDataProto.SingleResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2542,18 +2542,18 @@ public final class ShutdownData {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SingleResult)
-        com.juicer.core.ShutdownData.SingleResultOrBuilder {
+        SavedDataProto.SingleResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.juicer.core.ShutdownData.internal_static_SingleResult_descriptor;
+        return SavedDataProto.internal_static_SingleResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.juicer.core.ShutdownData.internal_static_SingleResult_fieldAccessorTable
+        return SavedDataProto.internal_static_SingleResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.juicer.core.ShutdownData.SingleResult.class, com.juicer.core.ShutdownData.SingleResult.Builder.class);
+                SavedDataProto.SingleResult.class, SavedDataProto.SingleResult.Builder.class);
       }
 
       // Construct using com.juicer.core.ShutdownData.SingleResult.newBuilder()
@@ -2587,17 +2587,17 @@ public final class ShutdownData {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.juicer.core.ShutdownData.internal_static_SingleResult_descriptor;
+        return SavedDataProto.internal_static_SingleResult_descriptor;
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleResult getDefaultInstanceForType() {
-        return com.juicer.core.ShutdownData.SingleResult.getDefaultInstance();
+      public SavedDataProto.SingleResult getDefaultInstanceForType() {
+        return SavedDataProto.SingleResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleResult build() {
-        com.juicer.core.ShutdownData.SingleResult result = buildPartial();
+      public SavedDataProto.SingleResult build() {
+        SavedDataProto.SingleResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2605,8 +2605,8 @@ public final class ShutdownData {
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SingleResult buildPartial() {
-        com.juicer.core.ShutdownData.SingleResult result = new com.juicer.core.ShutdownData.SingleResult(this);
+      public SavedDataProto.SingleResult buildPartial() {
+        SavedDataProto.SingleResult result = new SavedDataProto.SingleResult(this);
         int from_bitField0_ = bitField0_;
         if (resultBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -2655,16 +2655,16 @@ public final class ShutdownData {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.juicer.core.ShutdownData.SingleResult) {
-          return mergeFrom((com.juicer.core.ShutdownData.SingleResult)other);
+        if (other instanceof SavedDataProto.SingleResult) {
+          return mergeFrom((SavedDataProto.SingleResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.juicer.core.ShutdownData.SingleResult other) {
-        if (other == com.juicer.core.ShutdownData.SingleResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(SavedDataProto.SingleResult other) {
+        if (other == SavedDataProto.SingleResult.getDefaultInstance()) return this;
         if (resultBuilder_ == null) {
           if (!other.result_.isEmpty()) {
             if (result_.isEmpty()) {
@@ -2706,11 +2706,11 @@ public final class ShutdownData {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.juicer.core.ShutdownData.SingleResult parsedMessage = null;
+        SavedDataProto.SingleResult parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.juicer.core.ShutdownData.SingleResult) e.getUnfinishedMessage();
+          parsedMessage = (SavedDataProto.SingleResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2721,22 +2721,22 @@ public final class ShutdownData {
       }
       private int bitField0_;
 
-      private java.util.List<com.juicer.core.ShutdownData.JuicerData> result_ =
+      private java.util.List<SavedDataProto.JuicerData> result_ =
         java.util.Collections.emptyList();
       private void ensureResultIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          result_ = new java.util.ArrayList<com.juicer.core.ShutdownData.JuicerData>(result_);
+          result_ = new java.util.ArrayList<SavedDataProto.JuicerData>(result_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.juicer.core.ShutdownData.JuicerData, com.juicer.core.ShutdownData.JuicerData.Builder, com.juicer.core.ShutdownData.JuicerDataOrBuilder> resultBuilder_;
+          SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder> resultBuilder_;
 
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public java.util.List<com.juicer.core.ShutdownData.JuicerData> getResultList() {
+      public java.util.List<SavedDataProto.JuicerData> getResultList() {
         if (resultBuilder_ == null) {
           return java.util.Collections.unmodifiableList(result_);
         } else {
@@ -2756,7 +2756,7 @@ public final class ShutdownData {
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public com.juicer.core.ShutdownData.JuicerData getResult(int index) {
+      public SavedDataProto.JuicerData getResult(int index) {
         if (resultBuilder_ == null) {
           return result_.get(index);
         } else {
@@ -2767,7 +2767,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder setResult(
-          int index, com.juicer.core.ShutdownData.JuicerData value) {
+          int index, SavedDataProto.JuicerData value) {
         if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2784,7 +2784,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder setResult(
-          int index, com.juicer.core.ShutdownData.JuicerData.Builder builderForValue) {
+          int index, SavedDataProto.JuicerData.Builder builderForValue) {
         if (resultBuilder_ == null) {
           ensureResultIsMutable();
           result_.set(index, builderForValue.build());
@@ -2797,7 +2797,7 @@ public final class ShutdownData {
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public Builder addResult(com.juicer.core.ShutdownData.JuicerData value) {
+      public Builder addResult(SavedDataProto.JuicerData value) {
         if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2814,7 +2814,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder addResult(
-          int index, com.juicer.core.ShutdownData.JuicerData value) {
+          int index, SavedDataProto.JuicerData value) {
         if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2831,7 +2831,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder addResult(
-          com.juicer.core.ShutdownData.JuicerData.Builder builderForValue) {
+          SavedDataProto.JuicerData.Builder builderForValue) {
         if (resultBuilder_ == null) {
           ensureResultIsMutable();
           result_.add(builderForValue.build());
@@ -2845,7 +2845,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder addResult(
-          int index, com.juicer.core.ShutdownData.JuicerData.Builder builderForValue) {
+          int index, SavedDataProto.JuicerData.Builder builderForValue) {
         if (resultBuilder_ == null) {
           ensureResultIsMutable();
           result_.add(index, builderForValue.build());
@@ -2859,7 +2859,7 @@ public final class ShutdownData {
        * <code>repeated .JuicerData result = 1;</code>
        */
       public Builder addAllResult(
-          java.lang.Iterable<? extends com.juicer.core.ShutdownData.JuicerData> values) {
+          java.lang.Iterable<? extends SavedDataProto.JuicerData> values) {
         if (resultBuilder_ == null) {
           ensureResultIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2899,14 +2899,14 @@ public final class ShutdownData {
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public com.juicer.core.ShutdownData.JuicerData.Builder getResultBuilder(
+      public SavedDataProto.JuicerData.Builder getResultBuilder(
           int index) {
         return getResultFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public com.juicer.core.ShutdownData.JuicerDataOrBuilder getResultOrBuilder(
+      public SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
           int index) {
         if (resultBuilder_ == null) {
           return result_.get(index);  } else {
@@ -2916,7 +2916,7 @@ public final class ShutdownData {
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public java.util.List<? extends com.juicer.core.ShutdownData.JuicerDataOrBuilder> 
+      public java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
            getResultOrBuilderList() {
         if (resultBuilder_ != null) {
           return resultBuilder_.getMessageOrBuilderList();
@@ -2927,31 +2927,31 @@ public final class ShutdownData {
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public com.juicer.core.ShutdownData.JuicerData.Builder addResultBuilder() {
+      public SavedDataProto.JuicerData.Builder addResultBuilder() {
         return getResultFieldBuilder().addBuilder(
-            com.juicer.core.ShutdownData.JuicerData.getDefaultInstance());
+            SavedDataProto.JuicerData.getDefaultInstance());
       }
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public com.juicer.core.ShutdownData.JuicerData.Builder addResultBuilder(
+      public SavedDataProto.JuicerData.Builder addResultBuilder(
           int index) {
         return getResultFieldBuilder().addBuilder(
-            index, com.juicer.core.ShutdownData.JuicerData.getDefaultInstance());
+            index, SavedDataProto.JuicerData.getDefaultInstance());
       }
       /**
        * <code>repeated .JuicerData result = 1;</code>
        */
-      public java.util.List<com.juicer.core.ShutdownData.JuicerData.Builder> 
+      public java.util.List<SavedDataProto.JuicerData.Builder>
            getResultBuilderList() {
         return getResultFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.juicer.core.ShutdownData.JuicerData, com.juicer.core.ShutdownData.JuicerData.Builder, com.juicer.core.ShutdownData.JuicerDataOrBuilder> 
+          SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder>
           getResultFieldBuilder() {
         if (resultBuilder_ == null) {
           resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.juicer.core.ShutdownData.JuicerData, com.juicer.core.ShutdownData.JuicerData.Builder, com.juicer.core.ShutdownData.JuicerDataOrBuilder>(
+              SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder>(
                   result_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2977,12 +2977,12 @@ public final class ShutdownData {
     }
 
     // @@protoc_insertion_point(class_scope:SingleResult)
-    private static final com.juicer.core.ShutdownData.SingleResult DEFAULT_INSTANCE;
+    private static final SavedDataProto.SingleResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.juicer.core.ShutdownData.SingleResult();
+      DEFAULT_INSTANCE = new SavedDataProto.SingleResult();
     }
 
-    public static com.juicer.core.ShutdownData.SingleResult getDefaultInstance() {
+    public static SavedDataProto.SingleResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3007,7 +3007,7 @@ public final class ShutdownData {
     }
 
     @java.lang.Override
-    public com.juicer.core.ShutdownData.SingleResult getDefaultInstanceForType() {
+    public SavedDataProto.SingleResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3030,25 +3030,25 @@ public final class ShutdownData {
      * Use {@link #getJuicerTaskQueueMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+    java.util.Map<java.lang.String, SavedDataProto.SingleTask>
     getJuicerTaskQueue();
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+    java.util.Map<java.lang.String, SavedDataProto.SingleTask>
     getJuicerTaskQueueMap();
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrDefault(
+    SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.SingleTask defaultValue);
+        SavedDataProto.SingleTask defaultValue);
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrThrow(
+    SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
         java.lang.String key);
 
     /**
@@ -3098,25 +3098,25 @@ public final class ShutdownData {
      * Use {@link #getJuicerResultStorageMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+    java.util.Map<java.lang.String, SavedDataProto.SingleResult>
     getJuicerResultStorage();
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
-    java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+    java.util.Map<java.lang.String, SavedDataProto.SingleResult>
     getJuicerResultStorageMap();
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrDefault(
+    SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.SingleResult defaultValue);
+        SavedDataProto.SingleResult defaultValue);
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrThrow(
+    SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
         java.lang.String key);
   }
   /**
@@ -3171,7 +3171,7 @@ public final class ShutdownData {
                     JuicerTaskQueueDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleTask>
               juicerTaskQueue__ = input.readMessage(
                   JuicerTaskQueueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               juicerTaskQueue_.getMutableMap().put(
@@ -3197,7 +3197,7 @@ public final class ShutdownData {
                     JuicerResultStorageDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
               }
-              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleResult>
               juicerResultStorage__ = input.readMessage(
                   JuicerResultStorageDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               juicerResultStorage_.getMutableMap().put(
@@ -3225,7 +3225,7 @@ public final class ShutdownData {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.juicer.core.ShutdownData.internal_static_SavedData_descriptor;
+      return SavedDataProto.internal_static_SavedData_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -3247,26 +3247,26 @@ public final class ShutdownData {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.juicer.core.ShutdownData.internal_static_SavedData_fieldAccessorTable
+      return SavedDataProto.internal_static_SavedData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.juicer.core.ShutdownData.SavedData.class, com.juicer.core.ShutdownData.SavedData.Builder.class);
+              SavedDataProto.SavedData.class, SavedDataProto.SavedData.Builder.class);
     }
 
     public static final int JUICERTASKQUEUE_FIELD_NUMBER = 1;
     private static final class JuicerTaskQueueDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, com.juicer.core.ShutdownData.SingleTask> defaultEntry =
+          java.lang.String, SavedDataProto.SingleTask> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, com.juicer.core.ShutdownData.SingleTask>newDefaultInstance(
-                  com.juicer.core.ShutdownData.internal_static_SavedData_JuicerTaskQueueEntry_descriptor, 
+              .<java.lang.String, SavedDataProto.SingleTask>newDefaultInstance(
+                  SavedDataProto.internal_static_SavedData_JuicerTaskQueueEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.juicer.core.ShutdownData.SingleTask.getDefaultInstance());
+                  SavedDataProto.SingleTask.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, com.juicer.core.ShutdownData.SingleTask> juicerTaskQueue_;
-    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+        java.lang.String, SavedDataProto.SingleTask> juicerTaskQueue_;
+    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
     internalGetJuicerTaskQueue() {
       if (juicerTaskQueue_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3291,25 +3291,25 @@ public final class ShutdownData {
      * Use {@link #getJuicerTaskQueueMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> getJuicerTaskQueue() {
+    public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueue() {
       return getJuicerTaskQueueMap();
     }
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> getJuicerTaskQueueMap() {
+    public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
       return internalGetJuicerTaskQueue().getMap();
     }
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrDefault(
+    public SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.SingleTask defaultValue) {
+        SavedDataProto.SingleTask defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> map =
+      java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
           internalGetJuicerTaskQueue().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -3317,10 +3317,10 @@ public final class ShutdownData {
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrThrow(
+    public SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> map =
+      java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
           internalGetJuicerTaskQueue().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3334,7 +3334,7 @@ public final class ShutdownData {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.juicer.core.ShutdownData.internal_static_SavedData_JuicerChainEntry_descriptor, 
+                  SavedDataProto.internal_static_SavedData_JuicerChainEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -3407,18 +3407,18 @@ public final class ShutdownData {
     public static final int JUICERRESULTSTORAGE_FIELD_NUMBER = 3;
     private static final class JuicerResultStorageDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, com.juicer.core.ShutdownData.SingleResult> defaultEntry =
+          java.lang.String, SavedDataProto.SingleResult> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, com.juicer.core.ShutdownData.SingleResult>newDefaultInstance(
-                  com.juicer.core.ShutdownData.internal_static_SavedData_JuicerResultStorageEntry_descriptor, 
+              .<java.lang.String, SavedDataProto.SingleResult>newDefaultInstance(
+                  SavedDataProto.internal_static_SavedData_JuicerResultStorageEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.juicer.core.ShutdownData.SingleResult.getDefaultInstance());
+                  SavedDataProto.SingleResult.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, com.juicer.core.ShutdownData.SingleResult> juicerResultStorage_;
-    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+        java.lang.String, SavedDataProto.SingleResult> juicerResultStorage_;
+    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
     internalGetJuicerResultStorage() {
       if (juicerResultStorage_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3443,25 +3443,25 @@ public final class ShutdownData {
      * Use {@link #getJuicerResultStorageMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> getJuicerResultStorage() {
+    public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorage() {
       return getJuicerResultStorageMap();
     }
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> getJuicerResultStorageMap() {
+    public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorageMap() {
       return internalGetJuicerResultStorage().getMap();
     }
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrDefault(
+    public SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
         java.lang.String key,
-        com.juicer.core.ShutdownData.SingleResult defaultValue) {
+        SavedDataProto.SingleResult defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> map =
+      java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
           internalGetJuicerResultStorage().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -3469,10 +3469,10 @@ public final class ShutdownData {
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrThrow(
+    public SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> map =
+      java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
           internalGetJuicerResultStorage().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3521,9 +3521,9 @@ public final class ShutdownData {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, com.juicer.core.ShutdownData.SingleTask> entry
+      for (java.util.Map.Entry<java.lang.String, SavedDataProto.SingleTask> entry
            : internalGetJuicerTaskQueue().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleTask>
         juicerTaskQueue__ = JuicerTaskQueueDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3541,9 +3541,9 @@ public final class ShutdownData {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, juicerChain__);
       }
-      for (java.util.Map.Entry<java.lang.String, com.juicer.core.ShutdownData.SingleResult> entry
+      for (java.util.Map.Entry<java.lang.String, SavedDataProto.SingleResult> entry
            : internalGetJuicerResultStorage().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleResult>
         juicerResultStorage__ = JuicerResultStorageDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3561,10 +3561,10 @@ public final class ShutdownData {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.juicer.core.ShutdownData.SavedData)) {
+      if (!(obj instanceof SavedDataProto.SavedData)) {
         return super.equals(obj);
       }
-      com.juicer.core.ShutdownData.SavedData other = (com.juicer.core.ShutdownData.SavedData) obj;
+      SavedDataProto.SavedData other = (SavedDataProto.SavedData) obj;
 
       if (!internalGetJuicerTaskQueue().equals(
           other.internalGetJuicerTaskQueue())) return false;
@@ -3600,69 +3600,69 @@ public final class ShutdownData {
       return hash;
     }
 
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(byte[] data)
+    public static SavedDataProto.SavedData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(java.io.InputStream input)
+    public static SavedDataProto.SavedData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseDelimitedFrom(java.io.InputStream input)
+    public static SavedDataProto.SavedData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseDelimitedFrom(
+    public static SavedDataProto.SavedData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.juicer.core.ShutdownData.SavedData parseFrom(
+    public static SavedDataProto.SavedData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3675,7 +3675,7 @@ public final class ShutdownData {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.juicer.core.ShutdownData.SavedData prototype) {
+    public static Builder newBuilder(SavedDataProto.SavedData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3696,10 +3696,10 @@ public final class ShutdownData {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SavedData)
-        com.juicer.core.ShutdownData.SavedDataOrBuilder {
+        SavedDataProto.SavedDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.juicer.core.ShutdownData.internal_static_SavedData_descriptor;
+        return SavedDataProto.internal_static_SavedData_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -3735,9 +3735,9 @@ public final class ShutdownData {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.juicer.core.ShutdownData.internal_static_SavedData_fieldAccessorTable
+        return SavedDataProto.internal_static_SavedData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.juicer.core.ShutdownData.SavedData.class, com.juicer.core.ShutdownData.SavedData.Builder.class);
+                SavedDataProto.SavedData.class, SavedDataProto.SavedData.Builder.class);
       }
 
       // Construct using com.juicer.core.ShutdownData.SavedData.newBuilder()
@@ -3767,17 +3767,17 @@ public final class ShutdownData {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.juicer.core.ShutdownData.internal_static_SavedData_descriptor;
+        return SavedDataProto.internal_static_SavedData_descriptor;
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SavedData getDefaultInstanceForType() {
-        return com.juicer.core.ShutdownData.SavedData.getDefaultInstance();
+      public SavedDataProto.SavedData getDefaultInstanceForType() {
+        return SavedDataProto.SavedData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SavedData build() {
-        com.juicer.core.ShutdownData.SavedData result = buildPartial();
+      public SavedDataProto.SavedData build() {
+        SavedDataProto.SavedData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3785,8 +3785,8 @@ public final class ShutdownData {
       }
 
       @java.lang.Override
-      public com.juicer.core.ShutdownData.SavedData buildPartial() {
-        com.juicer.core.ShutdownData.SavedData result = new com.juicer.core.ShutdownData.SavedData(this);
+      public SavedDataProto.SavedData buildPartial() {
+        SavedDataProto.SavedData result = new SavedDataProto.SavedData(this);
         int from_bitField0_ = bitField0_;
         result.juicerTaskQueue_ = internalGetJuicerTaskQueue();
         result.juicerTaskQueue_.makeImmutable();
@@ -3832,16 +3832,16 @@ public final class ShutdownData {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.juicer.core.ShutdownData.SavedData) {
-          return mergeFrom((com.juicer.core.ShutdownData.SavedData)other);
+        if (other instanceof SavedDataProto.SavedData) {
+          return mergeFrom((SavedDataProto.SavedData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.juicer.core.ShutdownData.SavedData other) {
-        if (other == com.juicer.core.ShutdownData.SavedData.getDefaultInstance()) return this;
+      public Builder mergeFrom(SavedDataProto.SavedData other) {
+        if (other == SavedDataProto.SavedData.getDefaultInstance()) return this;
         internalGetMutableJuicerTaskQueue().mergeFrom(
             other.internalGetJuicerTaskQueue());
         internalGetMutableJuicerChain().mergeFrom(
@@ -3863,11 +3863,11 @@ public final class ShutdownData {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.juicer.core.ShutdownData.SavedData parsedMessage = null;
+        SavedDataProto.SavedData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.juicer.core.ShutdownData.SavedData) e.getUnfinishedMessage();
+          parsedMessage = (SavedDataProto.SavedData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3879,8 +3879,8 @@ public final class ShutdownData {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.String, com.juicer.core.ShutdownData.SingleTask> juicerTaskQueue_;
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+          java.lang.String, SavedDataProto.SingleTask> juicerTaskQueue_;
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
       internalGetJuicerTaskQueue() {
         if (juicerTaskQueue_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -3888,7 +3888,7 @@ public final class ShutdownData {
         }
         return juicerTaskQueue_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
       internalGetMutableJuicerTaskQueue() {
         onChanged();;
         if (juicerTaskQueue_ == null) {
@@ -3917,25 +3917,25 @@ public final class ShutdownData {
        * Use {@link #getJuicerTaskQueueMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> getJuicerTaskQueue() {
+      public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueue() {
         return getJuicerTaskQueueMap();
       }
       /**
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> getJuicerTaskQueueMap() {
+      public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
         return internalGetJuicerTaskQueue().getMap();
       }
       /**
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrDefault(
+      public SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
           java.lang.String key,
-          com.juicer.core.ShutdownData.SingleTask defaultValue) {
+          SavedDataProto.SingleTask defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> map =
+        java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
             internalGetJuicerTaskQueue().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -3943,10 +3943,10 @@ public final class ShutdownData {
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public com.juicer.core.ShutdownData.SingleTask getJuicerTaskQueueOrThrow(
+      public SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> map =
+        java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
             internalGetJuicerTaskQueue().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -3974,7 +3974,7 @@ public final class ShutdownData {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask>
+      public java.util.Map<java.lang.String, SavedDataProto.SingleTask>
       getMutableJuicerTaskQueue() {
         return internalGetMutableJuicerTaskQueue().getMutableMap();
       }
@@ -3983,7 +3983,7 @@ public final class ShutdownData {
        */
       public Builder putJuicerTaskQueue(
           java.lang.String key,
-          com.juicer.core.ShutdownData.SingleTask value) {
+          SavedDataProto.SingleTask value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableJuicerTaskQueue().getMutableMap()
@@ -3995,7 +3995,7 @@ public final class ShutdownData {
        */
 
       public Builder putAllJuicerTaskQueue(
-          java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleTask> values) {
+          java.util.Map<java.lang.String, SavedDataProto.SingleTask> values) {
         internalGetMutableJuicerTaskQueue().getMutableMap()
             .putAll(values);
         return this;
@@ -4125,8 +4125,8 @@ public final class ShutdownData {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.String, com.juicer.core.ShutdownData.SingleResult> juicerResultStorage_;
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+          java.lang.String, SavedDataProto.SingleResult> juicerResultStorage_;
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
       internalGetJuicerResultStorage() {
         if (juicerResultStorage_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -4134,7 +4134,7 @@ public final class ShutdownData {
         }
         return juicerResultStorage_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
       internalGetMutableJuicerResultStorage() {
         onChanged();;
         if (juicerResultStorage_ == null) {
@@ -4163,25 +4163,25 @@ public final class ShutdownData {
        * Use {@link #getJuicerResultStorageMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> getJuicerResultStorage() {
+      public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorage() {
         return getJuicerResultStorageMap();
       }
       /**
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> getJuicerResultStorageMap() {
+      public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorageMap() {
         return internalGetJuicerResultStorage().getMap();
       }
       /**
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrDefault(
+      public SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
           java.lang.String key,
-          com.juicer.core.ShutdownData.SingleResult defaultValue) {
+          SavedDataProto.SingleResult defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> map =
+        java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
             internalGetJuicerResultStorage().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -4189,10 +4189,10 @@ public final class ShutdownData {
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public com.juicer.core.ShutdownData.SingleResult getJuicerResultStorageOrThrow(
+      public SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> map =
+        java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
             internalGetJuicerResultStorage().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -4220,7 +4220,7 @@ public final class ShutdownData {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult>
+      public java.util.Map<java.lang.String, SavedDataProto.SingleResult>
       getMutableJuicerResultStorage() {
         return internalGetMutableJuicerResultStorage().getMutableMap();
       }
@@ -4229,7 +4229,7 @@ public final class ShutdownData {
        */
       public Builder putJuicerResultStorage(
           java.lang.String key,
-          com.juicer.core.ShutdownData.SingleResult value) {
+          SavedDataProto.SingleResult value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableJuicerResultStorage().getMutableMap()
@@ -4241,7 +4241,7 @@ public final class ShutdownData {
        */
 
       public Builder putAllJuicerResultStorage(
-          java.util.Map<java.lang.String, com.juicer.core.ShutdownData.SingleResult> values) {
+          java.util.Map<java.lang.String, SavedDataProto.SingleResult> values) {
         internalGetMutableJuicerResultStorage().getMutableMap()
             .putAll(values);
         return this;
@@ -4263,12 +4263,12 @@ public final class ShutdownData {
     }
 
     // @@protoc_insertion_point(class_scope:SavedData)
-    private static final com.juicer.core.ShutdownData.SavedData DEFAULT_INSTANCE;
+    private static final SavedDataProto.SavedData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.juicer.core.ShutdownData.SavedData();
+      DEFAULT_INSTANCE = new SavedDataProto.SavedData();
     }
 
-    public static com.juicer.core.ShutdownData.SavedData getDefaultInstance() {
+    public static SavedDataProto.SavedData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4293,7 +4293,7 @@ public final class ShutdownData {
     }
 
     @java.lang.Override
-    public com.juicer.core.ShutdownData.SavedData getDefaultInstanceForType() {
+    public SavedDataProto.SavedData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

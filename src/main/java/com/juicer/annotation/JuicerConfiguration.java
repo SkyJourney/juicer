@@ -10,8 +10,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface HandlerSan {
-
-    String[] basePackages() default {};
-
+public @interface JuicerConfiguration {
+    String savePath() default "./JuicerSaveData.jdt";
 }

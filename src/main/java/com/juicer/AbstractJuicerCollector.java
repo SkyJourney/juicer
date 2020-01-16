@@ -38,10 +38,20 @@ public abstract class AbstractJuicerCollector {
         return forkJoinPool;
     }
 
+    public void setJuicerHandlerFactory(JuicerHandlerFactory juicerHandlerFactory) {
+        this.juicerHandlerFactory = juicerHandlerFactory;
+    }
+
+    public void setForkJoinPool(ForkJoinPool forkJoinPool) {
+        this.forkJoinPool = forkJoinPool;
+    }
+
+    public AbstractJuicerCollector() {
+    }
+
     public AbstractJuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
         this.juicerHandlerFactory = juicerHandlerFactory;
         this.forkJoinPool = forkJoinPool;
-        //init();
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {

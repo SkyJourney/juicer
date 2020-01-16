@@ -1,5 +1,9 @@
 package com.juicer;
 
+import com.juicer.annotation.EnableDataPersistence;
+import com.juicer.annotation.EnableInterruptResume;
+import com.juicer.annotation.HandlerScan;
+import com.juicer.annotation.JuicerConfiguration;
 import com.juicer.core.InterruptResume;
 import com.juicer.core.RuntimeStorage;
 import com.juicer.util.PropertiesUtils;
@@ -15,7 +19,7 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
     private static final Properties DEFAULT_INTERRUPT_SETTINGS;
     private static final String INTERRUPT_SAVE_ALLOW = "juicer.interrupt.save.allow";
     private static final String DATA_SAVE_PATH = "juicer.data.save.path";
-    public static final String DATA_PERSISTENCE = "juicer.data.persistence.allow";
+    private static final String DATA_PERSISTENCE = "juicer.data.persistence.allow";
     private static final String TRUE = "true";
     private static final String FALSE = "false";
 
@@ -45,6 +49,35 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         super(juicerHandlerFactory, forkJoinPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
         PropertiesUtils.putProperties(juicerInterruptSettings,PropertiesUtils.read(propertiesPath));
+        init();
+    }
+
+    public JuicerActuator(Class<?> clz) {
+        this(clz, ForkJoinPool.commonPool());
+    }
+
+    public JuicerActuator(Class<?> clz, ForkJoinPool forkJoinPool) {
+        super();
+        setForkJoinPool(forkJoinPool);
+        juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
+        JuicerConfiguration juicerConfiguration = clz.getAnnotation(JuicerConfiguration.class);
+        if (juicerConfiguration!=null) {
+            juicerInterruptSettings.setProperty(DATA_SAVE_PATH, juicerConfiguration.savePath());
+            EnableInterruptResume enableInterruptResume = clz.getAnnotation(EnableInterruptResume.class);
+            EnableDataPersistence enableDataPersistence = clz.getAnnotation(EnableDataPersistence.class);
+            HandlerScan handlerScan = clz.getAnnotation(HandlerScan.class);
+            if (handlerScan!=null) {
+                setJuicerHandlerFactory(new JuicerHandlerFactory(handlerScan.basePackages()));
+            } else {
+                setJuicerHandlerFactory(new JuicerHandlerFactory());
+            }
+            if (enableInterruptResume!=null) {
+                juicerInterruptSettings.setProperty(INTERRUPT_SAVE_ALLOW, String.valueOf(enableInterruptResume.enable()));
+            }
+            if (enableDataPersistence!=null) {
+                juicerInterruptSettings.setProperty(DATA_PERSISTENCE, String.valueOf(enableDataPersistence.enable()));
+            }
+        }
         init();
     }
 
