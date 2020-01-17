@@ -1,13 +1,20 @@
 package com.juicer;
 
+import com.alibaba.fastjson.JSON;
+import com.google.protobuf.Any;
 import com.juicer.annotation.EnableDataPersistence;
 import com.juicer.annotation.EnableInterruptResume;
 import com.juicer.annotation.HandlerScan;
 import com.juicer.annotation.JuicerConfiguration;
 import com.juicer.core.InterruptResume;
 import com.juicer.core.RuntimeStorage;
+import com.juicer.core.SavedDataProto;
 import com.juicer.util.PropertiesUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.ForkJoinPool;
 
@@ -91,11 +98,43 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
 
     @Override
     public void resume(String path) {
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(new File(path));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Cannot open file.");
+        }
+        readData(fileInputStream);
 
     }
 
     @Override
     public void rescue(RuntimeStorage runtimeStorage) {
+        if (TRUE.equals(juicerInterruptSettings.getProperty(DATA_PERSISTENCE))) {
+            saveData();
+        } else {
+            if (getRuntimeStorage().getJuicerTaskQueue().size()!=0) {
+                saveData();
+            }
+        }
+    }
+
+    public void saveData() {
+        RuntimeStorage runtimeStorage = getRuntimeStorage();
+        SavedDataProto.SavedData.Builder builder = SavedDataProto.SavedData.newBuilder();
+        builder.putAllJuicerChain(runtimeStorage.getJuicerChain());
+        runtimeStorage.getJuicerResultStorage().forEach((handler,results) -> {
+            SavedDataProto.SingleResult.Builder resultBuilder = SavedDataProto.SingleResult.newBuilder();
+            results.forEach(juicerData -> resultBuilder.addResult(
+                    JSON.toJSONString(juicerData)
+            ));
+            builder.putJuicerResultStorage(handler, resultBuilder.build());
+        });
+//        runtimeStorage.getJuicerTaskQueue()
+    }
+
+    public void readData(InputStream inputStream) {
 
     }
 }

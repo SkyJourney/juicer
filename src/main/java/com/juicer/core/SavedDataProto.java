@@ -128,15 +128,15 @@ public final class SavedDataProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SavedDataProto.internal_static_JuicerTask_descriptor;
+      return com.juicer.core.SavedDataProto.internal_static_JuicerTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
+      return com.juicer.core.SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SavedDataProto.JuicerTask.class, SavedDataProto.JuicerTask.Builder.class);
+              com.juicer.core.SavedDataProto.JuicerTask.class, com.juicer.core.SavedDataProto.JuicerTask.Builder.class);
     }
 
     public static final int URL_FIELD_NUMBER = 1;
@@ -268,10 +268,10 @@ public final class SavedDataProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SavedDataProto.JuicerTask)) {
+      if (!(obj instanceof com.juicer.core.SavedDataProto.JuicerTask)) {
         return super.equals(obj);
       }
-      SavedDataProto.JuicerTask other = (SavedDataProto.JuicerTask) obj;
+      com.juicer.core.SavedDataProto.JuicerTask other = (com.juicer.core.SavedDataProto.JuicerTask) obj;
 
       if (!getUrl()
           .equals(other.getUrl())) return false;
@@ -302,69 +302,69 @@ public final class SavedDataProto {
       return hash;
     }
 
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.JuicerTask parseFrom(byte[] data)
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.JuicerTask parseFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.JuicerTask parseDelimitedFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.JuicerTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SavedDataProto.JuicerTask parseDelimitedFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.JuicerTask parseFrom(
+    public static com.juicer.core.SavedDataProto.JuicerTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -377,7 +377,7 @@ public final class SavedDataProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SavedDataProto.JuicerTask prototype) {
+    public static Builder newBuilder(com.juicer.core.SavedDataProto.JuicerTask prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -398,21 +398,21 @@ public final class SavedDataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:JuicerTask)
-        SavedDataProto.JuicerTaskOrBuilder {
+        com.juicer.core.SavedDataProto.JuicerTaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SavedDataProto.internal_static_JuicerTask_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_JuicerTask_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
+        return com.juicer.core.SavedDataProto.internal_static_JuicerTask_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SavedDataProto.JuicerTask.class, SavedDataProto.JuicerTask.Builder.class);
+                com.juicer.core.SavedDataProto.JuicerTask.class, com.juicer.core.SavedDataProto.JuicerTask.Builder.class);
       }
 
-      // Construct using com.juicer.core.ShutdownData.JuicerTask.newBuilder()
+      // Construct using com.juicer.core.SavedDataProto.JuicerTask.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -442,17 +442,17 @@ public final class SavedDataProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SavedDataProto.internal_static_JuicerTask_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_JuicerTask_descriptor;
       }
 
       @java.lang.Override
-      public SavedDataProto.JuicerTask getDefaultInstanceForType() {
-        return SavedDataProto.JuicerTask.getDefaultInstance();
+      public com.juicer.core.SavedDataProto.JuicerTask getDefaultInstanceForType() {
+        return com.juicer.core.SavedDataProto.JuicerTask.getDefaultInstance();
       }
 
       @java.lang.Override
-      public SavedDataProto.JuicerTask build() {
-        SavedDataProto.JuicerTask result = buildPartial();
+      public com.juicer.core.SavedDataProto.JuicerTask build() {
+        com.juicer.core.SavedDataProto.JuicerTask result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -460,8 +460,8 @@ public final class SavedDataProto {
       }
 
       @java.lang.Override
-      public SavedDataProto.JuicerTask buildPartial() {
-        SavedDataProto.JuicerTask result = new SavedDataProto.JuicerTask(this);
+      public com.juicer.core.SavedDataProto.JuicerTask buildPartial() {
+        com.juicer.core.SavedDataProto.JuicerTask result = new com.juicer.core.SavedDataProto.JuicerTask(this);
         result.url_ = url_;
         result.next_ = next_;
         result.isFinished_ = isFinished_;
@@ -503,16 +503,16 @@ public final class SavedDataProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SavedDataProto.JuicerTask) {
-          return mergeFrom((SavedDataProto.JuicerTask)other);
+        if (other instanceof com.juicer.core.SavedDataProto.JuicerTask) {
+          return mergeFrom((com.juicer.core.SavedDataProto.JuicerTask)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SavedDataProto.JuicerTask other) {
-        if (other == SavedDataProto.JuicerTask.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.juicer.core.SavedDataProto.JuicerTask other) {
+        if (other == com.juicer.core.SavedDataProto.JuicerTask.getDefaultInstance()) return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           onChanged();
@@ -539,11 +539,11 @@ public final class SavedDataProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SavedDataProto.JuicerTask parsedMessage = null;
+        com.juicer.core.SavedDataProto.JuicerTask parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SavedDataProto.JuicerTask) e.getUnfinishedMessage();
+          parsedMessage = (com.juicer.core.SavedDataProto.JuicerTask) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -733,12 +733,12 @@ public final class SavedDataProto {
     }
 
     // @@protoc_insertion_point(class_scope:JuicerTask)
-    private static final SavedDataProto.JuicerTask DEFAULT_INSTANCE;
+    private static final com.juicer.core.SavedDataProto.JuicerTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SavedDataProto.JuicerTask();
+      DEFAULT_INSTANCE = new com.juicer.core.SavedDataProto.JuicerTask();
     }
 
-    public static SavedDataProto.JuicerTask getDefaultInstance() {
+    public static com.juicer.core.SavedDataProto.JuicerTask getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -763,7 +763,7 @@ public final class SavedDataProto {
     }
 
     @java.lang.Override
-    public SavedDataProto.JuicerTask getDefaultInstanceForType() {
+    public com.juicer.core.SavedDataProto.JuicerTask getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -786,25 +786,25 @@ public final class SavedDataProto {
      * Use {@link #getTaskMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
     getTask();
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
-    java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
     getTaskMap();
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    SavedDataProto.JuicerTask getTaskOrDefault(
+    com.juicer.core.SavedDataProto.JuicerTask getTaskOrDefault(
         java.lang.String key,
-        SavedDataProto.JuicerTask defaultValue);
+        com.juicer.core.SavedDataProto.JuicerTask defaultValue);
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    SavedDataProto.JuicerTask getTaskOrThrow(
+    com.juicer.core.SavedDataProto.JuicerTask getTaskOrThrow(
         java.lang.String key);
   }
   /**
@@ -859,7 +859,7 @@ public final class SavedDataProto {
                     TaskDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.JuicerTask>
+              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
               task__ = input.readMessage(
                   TaskDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               task_.getMutableMap().put(
@@ -887,7 +887,7 @@ public final class SavedDataProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SavedDataProto.internal_static_SingleTask_descriptor;
+      return com.juicer.core.SavedDataProto.internal_static_SingleTask_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -905,26 +905,26 @@ public final class SavedDataProto {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SavedDataProto.internal_static_SingleTask_fieldAccessorTable
+      return com.juicer.core.SavedDataProto.internal_static_SingleTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SavedDataProto.SingleTask.class, SavedDataProto.SingleTask.Builder.class);
+              com.juicer.core.SavedDataProto.SingleTask.class, com.juicer.core.SavedDataProto.SingleTask.Builder.class);
     }
 
     public static final int TASK_FIELD_NUMBER = 1;
     private static final class TaskDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, SavedDataProto.JuicerTask> defaultEntry =
+          java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, SavedDataProto.JuicerTask>newDefaultInstance(
-                  SavedDataProto.internal_static_SingleTask_TaskEntry_descriptor,
+              .<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>newDefaultInstance(
+                  com.juicer.core.SavedDataProto.internal_static_SingleTask_TaskEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  SavedDataProto.JuicerTask.getDefaultInstance());
+                  com.juicer.core.SavedDataProto.JuicerTask.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, SavedDataProto.JuicerTask> task_;
-    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
+        java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> task_;
+    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
     internalGetTask() {
       if (task_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -949,25 +949,25 @@ public final class SavedDataProto {
      * Use {@link #getTaskMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTask() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> getTask() {
       return getTaskMap();
     }
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTaskMap() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> getTaskMap() {
       return internalGetTask().getMap();
     }
     /**
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public SavedDataProto.JuicerTask getTaskOrDefault(
+    public com.juicer.core.SavedDataProto.JuicerTask getTaskOrDefault(
         java.lang.String key,
-        SavedDataProto.JuicerTask defaultValue) {
+        com.juicer.core.SavedDataProto.JuicerTask defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> map =
           internalGetTask().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -975,10 +975,10 @@ public final class SavedDataProto {
      * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
      */
 
-    public SavedDataProto.JuicerTask getTaskOrThrow(
+    public com.juicer.core.SavedDataProto.JuicerTask getTaskOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> map =
           internalGetTask().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1015,9 +1015,9 @@ public final class SavedDataProto {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, SavedDataProto.JuicerTask> entry
+      for (java.util.Map.Entry<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> entry
            : internalGetTask().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.JuicerTask>
+        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
         task__ = TaskDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1035,10 +1035,10 @@ public final class SavedDataProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SavedDataProto.SingleTask)) {
+      if (!(obj instanceof com.juicer.core.SavedDataProto.SingleTask)) {
         return super.equals(obj);
       }
-      SavedDataProto.SingleTask other = (SavedDataProto.SingleTask) obj;
+      com.juicer.core.SavedDataProto.SingleTask other = (com.juicer.core.SavedDataProto.SingleTask) obj;
 
       if (!internalGetTask().equals(
           other.internalGetTask())) return false;
@@ -1062,69 +1062,69 @@ public final class SavedDataProto {
       return hash;
     }
 
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleTask parseFrom(byte[] data)
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleTask parseFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SingleTask parseDelimitedFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SingleTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleTask parseDelimitedFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleTask parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1137,7 +1137,7 @@ public final class SavedDataProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SavedDataProto.SingleTask prototype) {
+    public static Builder newBuilder(com.juicer.core.SavedDataProto.SingleTask prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1158,10 +1158,10 @@ public final class SavedDataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SingleTask)
-        SavedDataProto.SingleTaskOrBuilder {
+        com.juicer.core.SavedDataProto.SingleTaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SavedDataProto.internal_static_SingleTask_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SingleTask_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1189,12 +1189,12 @@ public final class SavedDataProto {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SavedDataProto.internal_static_SingleTask_fieldAccessorTable
+        return com.juicer.core.SavedDataProto.internal_static_SingleTask_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SavedDataProto.SingleTask.class, SavedDataProto.SingleTask.Builder.class);
+                com.juicer.core.SavedDataProto.SingleTask.class, com.juicer.core.SavedDataProto.SingleTask.Builder.class);
       }
 
-      // Construct using com.juicer.core.ShutdownData.SingleTask.newBuilder()
+      // Construct using com.juicer.core.SavedDataProto.SingleTask.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1219,17 +1219,17 @@ public final class SavedDataProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SavedDataProto.internal_static_SingleTask_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SingleTask_descriptor;
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleTask getDefaultInstanceForType() {
-        return SavedDataProto.SingleTask.getDefaultInstance();
+      public com.juicer.core.SavedDataProto.SingleTask getDefaultInstanceForType() {
+        return com.juicer.core.SavedDataProto.SingleTask.getDefaultInstance();
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleTask build() {
-        SavedDataProto.SingleTask result = buildPartial();
+      public com.juicer.core.SavedDataProto.SingleTask build() {
+        com.juicer.core.SavedDataProto.SingleTask result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1237,8 +1237,8 @@ public final class SavedDataProto {
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleTask buildPartial() {
-        SavedDataProto.SingleTask result = new SavedDataProto.SingleTask(this);
+      public com.juicer.core.SavedDataProto.SingleTask buildPartial() {
+        com.juicer.core.SavedDataProto.SingleTask result = new com.juicer.core.SavedDataProto.SingleTask(this);
         int from_bitField0_ = bitField0_;
         result.task_ = internalGetTask();
         result.task_.makeImmutable();
@@ -1280,16 +1280,16 @@ public final class SavedDataProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SavedDataProto.SingleTask) {
-          return mergeFrom((SavedDataProto.SingleTask)other);
+        if (other instanceof com.juicer.core.SavedDataProto.SingleTask) {
+          return mergeFrom((com.juicer.core.SavedDataProto.SingleTask)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SavedDataProto.SingleTask other) {
-        if (other == SavedDataProto.SingleTask.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.juicer.core.SavedDataProto.SingleTask other) {
+        if (other == com.juicer.core.SavedDataProto.SingleTask.getDefaultInstance()) return this;
         internalGetMutableTask().mergeFrom(
             other.internalGetTask());
         this.mergeUnknownFields(other.unknownFields);
@@ -1307,11 +1307,11 @@ public final class SavedDataProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SavedDataProto.SingleTask parsedMessage = null;
+        com.juicer.core.SavedDataProto.SingleTask parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SavedDataProto.SingleTask) e.getUnfinishedMessage();
+          parsedMessage = (com.juicer.core.SavedDataProto.SingleTask) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1323,8 +1323,8 @@ public final class SavedDataProto {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.String, SavedDataProto.JuicerTask> task_;
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
+          java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> task_;
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
       internalGetTask() {
         if (task_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -1332,7 +1332,7 @@ public final class SavedDataProto {
         }
         return task_;
       }
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.JuicerTask>
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
       internalGetMutableTask() {
         onChanged();;
         if (task_ == null) {
@@ -1361,25 +1361,25 @@ public final class SavedDataProto {
        * Use {@link #getTaskMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTask() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> getTask() {
         return getTaskMap();
       }
       /**
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask> getTaskMap() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> getTaskMap() {
         return internalGetTask().getMap();
       }
       /**
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public SavedDataProto.JuicerTask getTaskOrDefault(
+      public com.juicer.core.SavedDataProto.JuicerTask getTaskOrDefault(
           java.lang.String key,
-          SavedDataProto.JuicerTask defaultValue) {
+          com.juicer.core.SavedDataProto.JuicerTask defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> map =
             internalGetTask().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -1387,10 +1387,10 @@ public final class SavedDataProto {
        * <code>map&lt;string, .JuicerTask&gt; task = 1;</code>
        */
 
-      public SavedDataProto.JuicerTask getTaskOrThrow(
+      public com.juicer.core.SavedDataProto.JuicerTask getTaskOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.JuicerTask> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> map =
             internalGetTask().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -1418,7 +1418,7 @@ public final class SavedDataProto {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.JuicerTask>
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask>
       getMutableTask() {
         return internalGetMutableTask().getMutableMap();
       }
@@ -1427,7 +1427,7 @@ public final class SavedDataProto {
        */
       public Builder putTask(
           java.lang.String key,
-          SavedDataProto.JuicerTask value) {
+          com.juicer.core.SavedDataProto.JuicerTask value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTask().getMutableMap()
@@ -1439,7 +1439,7 @@ public final class SavedDataProto {
        */
 
       public Builder putAllTask(
-          java.util.Map<java.lang.String, SavedDataProto.JuicerTask> values) {
+          java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.JuicerTask> values) {
         internalGetMutableTask().getMutableMap()
             .putAll(values);
         return this;
@@ -1461,12 +1461,12 @@ public final class SavedDataProto {
     }
 
     // @@protoc_insertion_point(class_scope:SingleTask)
-    private static final SavedDataProto.SingleTask DEFAULT_INSTANCE;
+    private static final com.juicer.core.SavedDataProto.SingleTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SavedDataProto.SingleTask();
+      DEFAULT_INSTANCE = new com.juicer.core.SavedDataProto.SingleTask();
     }
 
-    public static SavedDataProto.SingleTask getDefaultInstance() {
+    public static com.juicer.core.SavedDataProto.SingleTask getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1491,735 +1491,7 @@ public final class SavedDataProto {
     }
 
     @java.lang.Override
-    public SavedDataProto.SingleTask getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface JuicerDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:JuicerData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-    int getDataCount();
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-    boolean containsData(
-        java.lang.String key);
-    /**
-     * Use {@link #getDataMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getData();
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getDataMap();
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    java.lang.String getDataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    java.lang.String getDataOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * Protobuf type {@code JuicerData}
-   */
-  public  static final class JuicerData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:JuicerData)
-      JuicerDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use JuicerData.newBuilder() to construct.
-    private JuicerData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private JuicerData() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new JuicerData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private JuicerData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                data_ = com.google.protobuf.MapField.newMapField(
-                    DataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              data__ = input.readMessage(
-                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              data_.getMutableMap().put(
-                  data__.getKey(), data__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return SavedDataProto.internal_static_JuicerData_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return SavedDataProto.internal_static_JuicerData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              SavedDataProto.JuicerData.class, SavedDataProto.JuicerData.Builder.class);
-    }
-
-    public static final int DATA_FIELD_NUMBER = 1;
-    private static final class DataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  SavedDataProto.internal_static_JuicerData_DataEntry_descriptor,
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> data_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetData() {
-      if (data_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
-      }
-      return data_;
-    }
-
-    public int getDataCount() {
-      return internalGetData().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    public boolean containsData(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetData().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getDataMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getData() {
-      return getDataMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-      return internalGetData().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    public java.lang.String getDataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1;</code>
-     */
-
-    public java.lang.String getDataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetData(),
-          DataDefaultEntryHolder.defaultEntry,
-          1);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetData().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, data__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof SavedDataProto.JuicerData)) {
-        return super.equals(obj);
-      }
-      SavedDataProto.JuicerData other = (SavedDataProto.JuicerData) obj;
-
-      if (!internalGetData().equals(
-          other.internalGetData())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetData().getMap().isEmpty()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetData().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static SavedDataProto.JuicerData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SavedDataProto.JuicerData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SavedDataProto.JuicerData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SavedDataProto.JuicerData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static SavedDataProto.JuicerData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SavedDataProto.JuicerData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(SavedDataProto.JuicerData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code JuicerData}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:JuicerData)
-        SavedDataProto.JuicerDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return SavedDataProto.internal_static_JuicerData_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return SavedDataProto.internal_static_JuicerData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                SavedDataProto.JuicerData.class, SavedDataProto.JuicerData.Builder.class);
-      }
-
-      // Construct using com.juicer.core.ShutdownData.JuicerData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        internalGetMutableData().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return SavedDataProto.internal_static_JuicerData_descriptor;
-      }
-
-      @java.lang.Override
-      public SavedDataProto.JuicerData getDefaultInstanceForType() {
-        return SavedDataProto.JuicerData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public SavedDataProto.JuicerData build() {
-        SavedDataProto.JuicerData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public SavedDataProto.JuicerData buildPartial() {
-        SavedDataProto.JuicerData result = new SavedDataProto.JuicerData(this);
-        int from_bitField0_ = bitField0_;
-        result.data_ = internalGetData();
-        result.data_.makeImmutable();
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SavedDataProto.JuicerData) {
-          return mergeFrom((SavedDataProto.JuicerData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(SavedDataProto.JuicerData other) {
-        if (other == SavedDataProto.JuicerData.getDefaultInstance()) return this;
-        internalGetMutableData().mergeFrom(
-            other.internalGetData());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        SavedDataProto.JuicerData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SavedDataProto.JuicerData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> data_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetData() {
-        if (data_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        return data_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableData() {
-        onChanged();;
-        if (data_ == null) {
-          data_ = com.google.protobuf.MapField.newMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        if (!data_.isMutable()) {
-          data_ = data_.copy();
-        }
-        return data_;
-      }
-
-      public int getDataCount() {
-        return internalGetData().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public boolean containsData(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetData().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getDataMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getData() {
-        return getDataMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-        return internalGetData().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public java.lang.String getDataOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public java.lang.String getDataOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearData() {
-        internalGetMutableData().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public Builder removeData(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableData() {
-        return internalGetMutableData().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-      public Builder putData(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1;</code>
-       */
-
-      public Builder putAllData(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableData().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:JuicerData)
-    }
-
-    // @@protoc_insertion_point(class_scope:JuicerData)
-    private static final SavedDataProto.JuicerData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new SavedDataProto.JuicerData();
-    }
-
-    public static SavedDataProto.JuicerData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<JuicerData>
-        PARSER = new com.google.protobuf.AbstractParser<JuicerData>() {
-      @java.lang.Override
-      public JuicerData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new JuicerData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<JuicerData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<JuicerData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public SavedDataProto.JuicerData getDefaultInstanceForType() {
+    public com.juicer.core.SavedDataProto.SingleTask getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2230,28 +1502,23 @@ public final class SavedDataProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    java.util.List<SavedDataProto.JuicerData>
+    java.util.List<java.lang.String>
         getResultList();
     /**
-     * <code>repeated .JuicerData result = 1;</code>
-     */
-    SavedDataProto.JuicerData getResult(int index);
-    /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
     int getResultCount();
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
-        getResultOrBuilderList();
+    java.lang.String getResult(int index);
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
-        int index);
+    com.google.protobuf.ByteString
+        getResultBytes(int index);
   }
   /**
    * Protobuf type {@code SingleResult}
@@ -2266,7 +1533,7 @@ public final class SavedDataProto {
       super(builder);
     }
     private SingleResult() {
-      result_ = java.util.Collections.emptyList();
+      result_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -2301,12 +1568,12 @@ public final class SavedDataProto {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                result_ = new java.util.ArrayList<SavedDataProto.JuicerData>();
+                result_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              result_.add(
-                  input.readMessage(SavedDataProto.JuicerData.parser(), extensionRegistry));
+              result_.add(s);
               break;
             }
             default: {
@@ -2325,7 +1592,7 @@ public final class SavedDataProto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          result_ = java.util.Collections.unmodifiableList(result_);
+          result_ = result_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2333,50 +1600,44 @@ public final class SavedDataProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SavedDataProto.internal_static_SingleResult_descriptor;
+      return com.juicer.core.SavedDataProto.internal_static_SingleResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SavedDataProto.internal_static_SingleResult_fieldAccessorTable
+      return com.juicer.core.SavedDataProto.internal_static_SingleResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SavedDataProto.SingleResult.class, SavedDataProto.SingleResult.Builder.class);
+              com.juicer.core.SavedDataProto.SingleResult.class, com.juicer.core.SavedDataProto.SingleResult.Builder.class);
     }
 
     public static final int RESULT_FIELD_NUMBER = 1;
-    private java.util.List<SavedDataProto.JuicerData> result_;
+    private com.google.protobuf.LazyStringList result_;
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    public java.util.List<SavedDataProto.JuicerData> getResultList() {
+    public com.google.protobuf.ProtocolStringList
+        getResultList() {
       return result_;
     }
     /**
-     * <code>repeated .JuicerData result = 1;</code>
-     */
-    public java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
-        getResultOrBuilderList() {
-      return result_;
-    }
-    /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
     public int getResultCount() {
       return result_.size();
     }
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    public SavedDataProto.JuicerData getResult(int index) {
+    public java.lang.String getResult(int index) {
       return result_.get(index);
     }
     /**
-     * <code>repeated .JuicerData result = 1;</code>
+     * <code>repeated string result = 1;</code>
      */
-    public SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
-        int index) {
-      return result_.get(index);
+    public com.google.protobuf.ByteString
+        getResultBytes(int index) {
+      return result_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2394,7 +1655,7 @@ public final class SavedDataProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < result_.size(); i++) {
-        output.writeMessage(1, result_.get(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2405,9 +1666,13 @@ public final class SavedDataProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < result_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, result_.get(i));
+      {
+        int dataSize = 0;
+        for (int i = 0; i < result_.size(); i++) {
+          dataSize += computeStringSizeNoTag(result_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getResultList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2419,10 +1684,10 @@ public final class SavedDataProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SavedDataProto.SingleResult)) {
+      if (!(obj instanceof com.juicer.core.SavedDataProto.SingleResult)) {
         return super.equals(obj);
       }
-      SavedDataProto.SingleResult other = (SavedDataProto.SingleResult) obj;
+      com.juicer.core.SavedDataProto.SingleResult other = (com.juicer.core.SavedDataProto.SingleResult) obj;
 
       if (!getResultList()
           .equals(other.getResultList())) return false;
@@ -2446,69 +1711,69 @@ public final class SavedDataProto {
       return hash;
     }
 
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleResult parseFrom(byte[] data)
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SingleResult parseFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SingleResult parseDelimitedFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SingleResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleResult parseDelimitedFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SingleResult parseFrom(
+    public static com.juicer.core.SavedDataProto.SingleResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2521,7 +1786,7 @@ public final class SavedDataProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SavedDataProto.SingleResult prototype) {
+    public static Builder newBuilder(com.juicer.core.SavedDataProto.SingleResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2542,21 +1807,21 @@ public final class SavedDataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SingleResult)
-        SavedDataProto.SingleResultOrBuilder {
+        com.juicer.core.SavedDataProto.SingleResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SavedDataProto.internal_static_SingleResult_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SingleResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SavedDataProto.internal_static_SingleResult_fieldAccessorTable
+        return com.juicer.core.SavedDataProto.internal_static_SingleResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SavedDataProto.SingleResult.class, SavedDataProto.SingleResult.Builder.class);
+                com.juicer.core.SavedDataProto.SingleResult.class, com.juicer.core.SavedDataProto.SingleResult.Builder.class);
       }
 
-      // Construct using com.juicer.core.ShutdownData.SingleResult.newBuilder()
+      // Construct using com.juicer.core.SavedDataProto.SingleResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2569,35 +1834,30 @@ public final class SavedDataProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getResultFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (resultBuilder_ == null) {
-          result_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          resultBuilder_.clear();
-        }
+        result_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SavedDataProto.internal_static_SingleResult_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SingleResult_descriptor;
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleResult getDefaultInstanceForType() {
-        return SavedDataProto.SingleResult.getDefaultInstance();
+      public com.juicer.core.SavedDataProto.SingleResult getDefaultInstanceForType() {
+        return com.juicer.core.SavedDataProto.SingleResult.getDefaultInstance();
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleResult build() {
-        SavedDataProto.SingleResult result = buildPartial();
+      public com.juicer.core.SavedDataProto.SingleResult build() {
+        com.juicer.core.SavedDataProto.SingleResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2605,18 +1865,14 @@ public final class SavedDataProto {
       }
 
       @java.lang.Override
-      public SavedDataProto.SingleResult buildPartial() {
-        SavedDataProto.SingleResult result = new SavedDataProto.SingleResult(this);
+      public com.juicer.core.SavedDataProto.SingleResult buildPartial() {
+        com.juicer.core.SavedDataProto.SingleResult result = new com.juicer.core.SavedDataProto.SingleResult(this);
         int from_bitField0_ = bitField0_;
-        if (resultBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            result_ = java.util.Collections.unmodifiableList(result_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.result_ = result_;
-        } else {
-          result.result_ = resultBuilder_.build();
+        if (((bitField0_ & 0x00000001) != 0)) {
+          result_ = result_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
+        result.result_ = result_;
         onBuilt();
         return result;
       }
@@ -2655,41 +1911,25 @@ public final class SavedDataProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SavedDataProto.SingleResult) {
-          return mergeFrom((SavedDataProto.SingleResult)other);
+        if (other instanceof com.juicer.core.SavedDataProto.SingleResult) {
+          return mergeFrom((com.juicer.core.SavedDataProto.SingleResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SavedDataProto.SingleResult other) {
-        if (other == SavedDataProto.SingleResult.getDefaultInstance()) return this;
-        if (resultBuilder_ == null) {
-          if (!other.result_.isEmpty()) {
-            if (result_.isEmpty()) {
-              result_ = other.result_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureResultIsMutable();
-              result_.addAll(other.result_);
-            }
-            onChanged();
+      public Builder mergeFrom(com.juicer.core.SavedDataProto.SingleResult other) {
+        if (other == com.juicer.core.SavedDataProto.SingleResult.getDefaultInstance()) return this;
+        if (!other.result_.isEmpty()) {
+          if (result_.isEmpty()) {
+            result_ = other.result_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureResultIsMutable();
+            result_.addAll(other.result_);
           }
-        } else {
-          if (!other.result_.isEmpty()) {
-            if (resultBuilder_.isEmpty()) {
-              resultBuilder_.dispose();
-              resultBuilder_ = null;
-              result_ = other.result_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              resultBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getResultFieldBuilder() : null;
-            } else {
-              resultBuilder_.addAllMessages(other.result_);
-            }
-          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2706,11 +1946,11 @@ public final class SavedDataProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SavedDataProto.SingleResult parsedMessage = null;
+        com.juicer.core.SavedDataProto.SingleResult parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SavedDataProto.SingleResult) e.getUnfinishedMessage();
+          parsedMessage = (com.juicer.core.SavedDataProto.SingleResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2721,244 +1961,98 @@ public final class SavedDataProto {
       }
       private int bitField0_;
 
-      private java.util.List<SavedDataProto.JuicerData> result_ =
-        java.util.Collections.emptyList();
+      private com.google.protobuf.LazyStringList result_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureResultIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          result_ = new java.util.ArrayList<SavedDataProto.JuicerData>(result_);
+          result_ = new com.google.protobuf.LazyStringArrayList(result_);
           bitField0_ |= 0x00000001;
          }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder> resultBuilder_;
-
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
-      public java.util.List<SavedDataProto.JuicerData> getResultList() {
-        if (resultBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(result_);
-        } else {
-          return resultBuilder_.getMessageList();
-        }
+      public com.google.protobuf.ProtocolStringList
+          getResultList() {
+        return result_.getUnmodifiableView();
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
       public int getResultCount() {
-        if (resultBuilder_ == null) {
-          return result_.size();
-        } else {
-          return resultBuilder_.getCount();
-        }
+        return result_.size();
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
-      public SavedDataProto.JuicerData getResult(int index) {
-        if (resultBuilder_ == null) {
-          return result_.get(index);
-        } else {
-          return resultBuilder_.getMessage(index);
-        }
+      public java.lang.String getResult(int index) {
+        return result_.get(index);
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
-      public Builder setResult(
-          int index, SavedDataProto.JuicerData value) {
-        if (resultBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResultIsMutable();
-          result_.set(index, value);
-          onChanged();
-        } else {
-          resultBuilder_.setMessage(index, value);
-        }
-        return this;
+      public com.google.protobuf.ByteString
+          getResultBytes(int index) {
+        return result_.getByteString(index);
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
       public Builder setResult(
-          int index, SavedDataProto.JuicerData.Builder builderForValue) {
-        if (resultBuilder_ == null) {
-          ensureResultIsMutable();
-          result_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          resultBuilder_.setMessage(index, builderForValue.build());
-        }
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureResultIsMutable();
+        result_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public Builder addResult(SavedDataProto.JuicerData value) {
-        if (resultBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResultIsMutable();
-          result_.add(value);
-          onChanged();
-        } else {
-          resultBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
       public Builder addResult(
-          int index, SavedDataProto.JuicerData value) {
-        if (resultBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResultIsMutable();
-          result_.add(index, value);
-          onChanged();
-        } else {
-          resultBuilder_.addMessage(index, value);
-        }
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureResultIsMutable();
+        result_.add(value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public Builder addResult(
-          SavedDataProto.JuicerData.Builder builderForValue) {
-        if (resultBuilder_ == null) {
-          ensureResultIsMutable();
-          result_.add(builderForValue.build());
-          onChanged();
-        } else {
-          resultBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public Builder addResult(
-          int index, SavedDataProto.JuicerData.Builder builderForValue) {
-        if (resultBuilder_ == null) {
-          ensureResultIsMutable();
-          result_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          resultBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
       public Builder addAllResult(
-          java.lang.Iterable<? extends SavedDataProto.JuicerData> values) {
-        if (resultBuilder_ == null) {
-          ensureResultIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, result_);
-          onChanged();
-        } else {
-          resultBuilder_.addAllMessages(values);
-        }
+          java.lang.Iterable<java.lang.String> values) {
+        ensureResultIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, result_);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
       public Builder clearResult() {
-        if (resultBuilder_ == null) {
-          result_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          resultBuilder_.clear();
-        }
+        result_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .JuicerData result = 1;</code>
+       * <code>repeated string result = 1;</code>
        */
-      public Builder removeResult(int index) {
-        if (resultBuilder_ == null) {
-          ensureResultIsMutable();
-          result_.remove(index);
-          onChanged();
-        } else {
-          resultBuilder_.remove(index);
-        }
+      public Builder addResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureResultIsMutable();
+        result_.add(value);
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public SavedDataProto.JuicerData.Builder getResultBuilder(
-          int index) {
-        return getResultFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public SavedDataProto.JuicerDataOrBuilder getResultOrBuilder(
-          int index) {
-        if (resultBuilder_ == null) {
-          return result_.get(index);  } else {
-          return resultBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public java.util.List<? extends SavedDataProto.JuicerDataOrBuilder>
-           getResultOrBuilderList() {
-        if (resultBuilder_ != null) {
-          return resultBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(result_);
-        }
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public SavedDataProto.JuicerData.Builder addResultBuilder() {
-        return getResultFieldBuilder().addBuilder(
-            SavedDataProto.JuicerData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public SavedDataProto.JuicerData.Builder addResultBuilder(
-          int index) {
-        return getResultFieldBuilder().addBuilder(
-            index, SavedDataProto.JuicerData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .JuicerData result = 1;</code>
-       */
-      public java.util.List<SavedDataProto.JuicerData.Builder>
-           getResultBuilderList() {
-        return getResultFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder>
-          getResultFieldBuilder() {
-        if (resultBuilder_ == null) {
-          resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              SavedDataProto.JuicerData, SavedDataProto.JuicerData.Builder, SavedDataProto.JuicerDataOrBuilder>(
-                  result_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          result_ = null;
-        }
-        return resultBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2977,12 +2071,12 @@ public final class SavedDataProto {
     }
 
     // @@protoc_insertion_point(class_scope:SingleResult)
-    private static final SavedDataProto.SingleResult DEFAULT_INSTANCE;
+    private static final com.juicer.core.SavedDataProto.SingleResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SavedDataProto.SingleResult();
+      DEFAULT_INSTANCE = new com.juicer.core.SavedDataProto.SingleResult();
     }
 
-    public static SavedDataProto.SingleResult getDefaultInstance() {
+    public static com.juicer.core.SavedDataProto.SingleResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3007,7 +2101,7 @@ public final class SavedDataProto {
     }
 
     @java.lang.Override
-    public SavedDataProto.SingleResult getDefaultInstanceForType() {
+    public com.juicer.core.SavedDataProto.SingleResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3030,25 +2124,25 @@ public final class SavedDataProto {
      * Use {@link #getJuicerTaskQueueMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, SavedDataProto.SingleTask>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
     getJuicerTaskQueue();
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
-    java.util.Map<java.lang.String, SavedDataProto.SingleTask>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
     getJuicerTaskQueueMap();
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
+    com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
         java.lang.String key,
-        SavedDataProto.SingleTask defaultValue);
+        com.juicer.core.SavedDataProto.SingleTask defaultValue);
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
+    com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
         java.lang.String key);
 
     /**
@@ -3098,25 +2192,25 @@ public final class SavedDataProto {
      * Use {@link #getJuicerResultStorageMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, SavedDataProto.SingleResult>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
     getJuicerResultStorage();
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
-    java.util.Map<java.lang.String, SavedDataProto.SingleResult>
+    java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
     getJuicerResultStorageMap();
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
+    com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
         java.lang.String key,
-        SavedDataProto.SingleResult defaultValue);
+        com.juicer.core.SavedDataProto.SingleResult defaultValue);
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
+    com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
         java.lang.String key);
   }
   /**
@@ -3171,7 +2265,7 @@ public final class SavedDataProto {
                     JuicerTaskQueueDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleTask>
+              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
               juicerTaskQueue__ = input.readMessage(
                   JuicerTaskQueueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               juicerTaskQueue_.getMutableMap().put(
@@ -3197,7 +2291,7 @@ public final class SavedDataProto {
                     JuicerResultStorageDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
               }
-              com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleResult>
+              com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
               juicerResultStorage__ = input.readMessage(
                   JuicerResultStorageDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               juicerResultStorage_.getMutableMap().put(
@@ -3225,7 +2319,7 @@ public final class SavedDataProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SavedDataProto.internal_static_SavedData_descriptor;
+      return com.juicer.core.SavedDataProto.internal_static_SavedData_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -3247,26 +2341,26 @@ public final class SavedDataProto {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SavedDataProto.internal_static_SavedData_fieldAccessorTable
+      return com.juicer.core.SavedDataProto.internal_static_SavedData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SavedDataProto.SavedData.class, SavedDataProto.SavedData.Builder.class);
+              com.juicer.core.SavedDataProto.SavedData.class, com.juicer.core.SavedDataProto.SavedData.Builder.class);
     }
 
     public static final int JUICERTASKQUEUE_FIELD_NUMBER = 1;
     private static final class JuicerTaskQueueDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, SavedDataProto.SingleTask> defaultEntry =
+          java.lang.String, com.juicer.core.SavedDataProto.SingleTask> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, SavedDataProto.SingleTask>newDefaultInstance(
-                  SavedDataProto.internal_static_SavedData_JuicerTaskQueueEntry_descriptor,
+              .<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>newDefaultInstance(
+                  com.juicer.core.SavedDataProto.internal_static_SavedData_JuicerTaskQueueEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  SavedDataProto.SingleTask.getDefaultInstance());
+                  com.juicer.core.SavedDataProto.SingleTask.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, SavedDataProto.SingleTask> juicerTaskQueue_;
-    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
+        java.lang.String, com.juicer.core.SavedDataProto.SingleTask> juicerTaskQueue_;
+    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
     internalGetJuicerTaskQueue() {
       if (juicerTaskQueue_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3291,25 +2385,25 @@ public final class SavedDataProto {
      * Use {@link #getJuicerTaskQueueMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueue() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> getJuicerTaskQueue() {
       return getJuicerTaskQueueMap();
     }
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
       return internalGetJuicerTaskQueue().getMap();
     }
     /**
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
+    public com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
         java.lang.String key,
-        SavedDataProto.SingleTask defaultValue) {
+        com.juicer.core.SavedDataProto.SingleTask defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> map =
           internalGetJuicerTaskQueue().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -3317,10 +2411,10 @@ public final class SavedDataProto {
      * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
      */
 
-    public SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
+    public com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> map =
           internalGetJuicerTaskQueue().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3334,7 +2428,7 @@ public final class SavedDataProto {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  SavedDataProto.internal_static_SavedData_JuicerChainEntry_descriptor,
+                  com.juicer.core.SavedDataProto.internal_static_SavedData_JuicerChainEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -3407,18 +2501,18 @@ public final class SavedDataProto {
     public static final int JUICERRESULTSTORAGE_FIELD_NUMBER = 3;
     private static final class JuicerResultStorageDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, SavedDataProto.SingleResult> defaultEntry =
+          java.lang.String, com.juicer.core.SavedDataProto.SingleResult> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, SavedDataProto.SingleResult>newDefaultInstance(
-                  SavedDataProto.internal_static_SavedData_JuicerResultStorageEntry_descriptor,
+              .<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>newDefaultInstance(
+                  com.juicer.core.SavedDataProto.internal_static_SavedData_JuicerResultStorageEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  SavedDataProto.SingleResult.getDefaultInstance());
+                  com.juicer.core.SavedDataProto.SingleResult.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, SavedDataProto.SingleResult> juicerResultStorage_;
-    private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
+        java.lang.String, com.juicer.core.SavedDataProto.SingleResult> juicerResultStorage_;
+    private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
     internalGetJuicerResultStorage() {
       if (juicerResultStorage_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3443,25 +2537,25 @@ public final class SavedDataProto {
      * Use {@link #getJuicerResultStorageMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorage() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> getJuicerResultStorage() {
       return getJuicerResultStorageMap();
     }
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorageMap() {
+    public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> getJuicerResultStorageMap() {
       return internalGetJuicerResultStorage().getMap();
     }
     /**
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
+    public com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
         java.lang.String key,
-        SavedDataProto.SingleResult defaultValue) {
+        com.juicer.core.SavedDataProto.SingleResult defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> map =
           internalGetJuicerResultStorage().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -3469,10 +2563,10 @@ public final class SavedDataProto {
      * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
      */
 
-    public SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
+    public com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
+      java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> map =
           internalGetJuicerResultStorage().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3521,9 +2615,9 @@ public final class SavedDataProto {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, SavedDataProto.SingleTask> entry
+      for (java.util.Map.Entry<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> entry
            : internalGetJuicerTaskQueue().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleTask>
+        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
         juicerTaskQueue__ = JuicerTaskQueueDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3541,9 +2635,9 @@ public final class SavedDataProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, juicerChain__);
       }
-      for (java.util.Map.Entry<java.lang.String, SavedDataProto.SingleResult> entry
+      for (java.util.Map.Entry<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> entry
            : internalGetJuicerResultStorage().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, SavedDataProto.SingleResult>
+        com.google.protobuf.MapEntry<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
         juicerResultStorage__ = JuicerResultStorageDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3561,10 +2655,10 @@ public final class SavedDataProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SavedDataProto.SavedData)) {
+      if (!(obj instanceof com.juicer.core.SavedDataProto.SavedData)) {
         return super.equals(obj);
       }
-      SavedDataProto.SavedData other = (SavedDataProto.SavedData) obj;
+      com.juicer.core.SavedDataProto.SavedData other = (com.juicer.core.SavedDataProto.SavedData) obj;
 
       if (!internalGetJuicerTaskQueue().equals(
           other.internalGetJuicerTaskQueue())) return false;
@@ -3600,69 +2694,69 @@ public final class SavedDataProto {
       return hash;
     }
 
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SavedData parseFrom(byte[] data)
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SavedDataProto.SavedData parseFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SavedData parseDelimitedFrom(java.io.InputStream input)
+    public static com.juicer.core.SavedDataProto.SavedData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SavedData parseDelimitedFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SavedDataProto.SavedData parseFrom(
+    public static com.juicer.core.SavedDataProto.SavedData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3675,7 +2769,7 @@ public final class SavedDataProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SavedDataProto.SavedData prototype) {
+    public static Builder newBuilder(com.juicer.core.SavedDataProto.SavedData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3696,10 +2790,10 @@ public final class SavedDataProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SavedData)
-        SavedDataProto.SavedDataOrBuilder {
+        com.juicer.core.SavedDataProto.SavedDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SavedDataProto.internal_static_SavedData_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SavedData_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -3735,12 +2829,12 @@ public final class SavedDataProto {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SavedDataProto.internal_static_SavedData_fieldAccessorTable
+        return com.juicer.core.SavedDataProto.internal_static_SavedData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SavedDataProto.SavedData.class, SavedDataProto.SavedData.Builder.class);
+                com.juicer.core.SavedDataProto.SavedData.class, com.juicer.core.SavedDataProto.SavedData.Builder.class);
       }
 
-      // Construct using com.juicer.core.ShutdownData.SavedData.newBuilder()
+      // Construct using com.juicer.core.SavedDataProto.SavedData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3767,17 +2861,17 @@ public final class SavedDataProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SavedDataProto.internal_static_SavedData_descriptor;
+        return com.juicer.core.SavedDataProto.internal_static_SavedData_descriptor;
       }
 
       @java.lang.Override
-      public SavedDataProto.SavedData getDefaultInstanceForType() {
-        return SavedDataProto.SavedData.getDefaultInstance();
+      public com.juicer.core.SavedDataProto.SavedData getDefaultInstanceForType() {
+        return com.juicer.core.SavedDataProto.SavedData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public SavedDataProto.SavedData build() {
-        SavedDataProto.SavedData result = buildPartial();
+      public com.juicer.core.SavedDataProto.SavedData build() {
+        com.juicer.core.SavedDataProto.SavedData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3785,8 +2879,8 @@ public final class SavedDataProto {
       }
 
       @java.lang.Override
-      public SavedDataProto.SavedData buildPartial() {
-        SavedDataProto.SavedData result = new SavedDataProto.SavedData(this);
+      public com.juicer.core.SavedDataProto.SavedData buildPartial() {
+        com.juicer.core.SavedDataProto.SavedData result = new com.juicer.core.SavedDataProto.SavedData(this);
         int from_bitField0_ = bitField0_;
         result.juicerTaskQueue_ = internalGetJuicerTaskQueue();
         result.juicerTaskQueue_.makeImmutable();
@@ -3832,16 +2926,16 @@ public final class SavedDataProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SavedDataProto.SavedData) {
-          return mergeFrom((SavedDataProto.SavedData)other);
+        if (other instanceof com.juicer.core.SavedDataProto.SavedData) {
+          return mergeFrom((com.juicer.core.SavedDataProto.SavedData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SavedDataProto.SavedData other) {
-        if (other == SavedDataProto.SavedData.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.juicer.core.SavedDataProto.SavedData other) {
+        if (other == com.juicer.core.SavedDataProto.SavedData.getDefaultInstance()) return this;
         internalGetMutableJuicerTaskQueue().mergeFrom(
             other.internalGetJuicerTaskQueue());
         internalGetMutableJuicerChain().mergeFrom(
@@ -3863,11 +2957,11 @@ public final class SavedDataProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SavedDataProto.SavedData parsedMessage = null;
+        com.juicer.core.SavedDataProto.SavedData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SavedDataProto.SavedData) e.getUnfinishedMessage();
+          parsedMessage = (com.juicer.core.SavedDataProto.SavedData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3879,8 +2973,8 @@ public final class SavedDataProto {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.String, SavedDataProto.SingleTask> juicerTaskQueue_;
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
+          java.lang.String, com.juicer.core.SavedDataProto.SingleTask> juicerTaskQueue_;
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
       internalGetJuicerTaskQueue() {
         if (juicerTaskQueue_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -3888,7 +2982,7 @@ public final class SavedDataProto {
         }
         return juicerTaskQueue_;
       }
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleTask>
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
       internalGetMutableJuicerTaskQueue() {
         onChanged();;
         if (juicerTaskQueue_ == null) {
@@ -3917,25 +3011,25 @@ public final class SavedDataProto {
        * Use {@link #getJuicerTaskQueueMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueue() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> getJuicerTaskQueue() {
         return getJuicerTaskQueueMap();
       }
       /**
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public java.util.Map<java.lang.String, SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> getJuicerTaskQueueMap() {
         return internalGetJuicerTaskQueue().getMap();
       }
       /**
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
+      public com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrDefault(
           java.lang.String key,
-          SavedDataProto.SingleTask defaultValue) {
+          com.juicer.core.SavedDataProto.SingleTask defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> map =
             internalGetJuicerTaskQueue().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -3943,10 +3037,10 @@ public final class SavedDataProto {
        * <code>map&lt;string, .SingleTask&gt; juicerTaskQueue = 1;</code>
        */
 
-      public SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
+      public com.juicer.core.SavedDataProto.SingleTask getJuicerTaskQueueOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.SingleTask> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> map =
             internalGetJuicerTaskQueue().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -3974,7 +3068,7 @@ public final class SavedDataProto {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.SingleTask>
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask>
       getMutableJuicerTaskQueue() {
         return internalGetMutableJuicerTaskQueue().getMutableMap();
       }
@@ -3983,7 +3077,7 @@ public final class SavedDataProto {
        */
       public Builder putJuicerTaskQueue(
           java.lang.String key,
-          SavedDataProto.SingleTask value) {
+          com.juicer.core.SavedDataProto.SingleTask value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableJuicerTaskQueue().getMutableMap()
@@ -3995,7 +3089,7 @@ public final class SavedDataProto {
        */
 
       public Builder putAllJuicerTaskQueue(
-          java.util.Map<java.lang.String, SavedDataProto.SingleTask> values) {
+          java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleTask> values) {
         internalGetMutableJuicerTaskQueue().getMutableMap()
             .putAll(values);
         return this;
@@ -4125,8 +3219,8 @@ public final class SavedDataProto {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.String, SavedDataProto.SingleResult> juicerResultStorage_;
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
+          java.lang.String, com.juicer.core.SavedDataProto.SingleResult> juicerResultStorage_;
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
       internalGetJuicerResultStorage() {
         if (juicerResultStorage_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -4134,7 +3228,7 @@ public final class SavedDataProto {
         }
         return juicerResultStorage_;
       }
-      private com.google.protobuf.MapField<java.lang.String, SavedDataProto.SingleResult>
+      private com.google.protobuf.MapField<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
       internalGetMutableJuicerResultStorage() {
         onChanged();;
         if (juicerResultStorage_ == null) {
@@ -4163,25 +3257,25 @@ public final class SavedDataProto {
        * Use {@link #getJuicerResultStorageMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorage() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> getJuicerResultStorage() {
         return getJuicerResultStorageMap();
       }
       /**
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public java.util.Map<java.lang.String, SavedDataProto.SingleResult> getJuicerResultStorageMap() {
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> getJuicerResultStorageMap() {
         return internalGetJuicerResultStorage().getMap();
       }
       /**
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
+      public com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrDefault(
           java.lang.String key,
-          SavedDataProto.SingleResult defaultValue) {
+          com.juicer.core.SavedDataProto.SingleResult defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> map =
             internalGetJuicerResultStorage().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -4189,10 +3283,10 @@ public final class SavedDataProto {
        * <code>map&lt;string, .SingleResult&gt; juicerResultStorage = 3;</code>
        */
 
-      public SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
+      public com.juicer.core.SavedDataProto.SingleResult getJuicerResultStorageOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, SavedDataProto.SingleResult> map =
+        java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> map =
             internalGetJuicerResultStorage().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -4220,7 +3314,7 @@ public final class SavedDataProto {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, SavedDataProto.SingleResult>
+      public java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult>
       getMutableJuicerResultStorage() {
         return internalGetMutableJuicerResultStorage().getMutableMap();
       }
@@ -4229,7 +3323,7 @@ public final class SavedDataProto {
        */
       public Builder putJuicerResultStorage(
           java.lang.String key,
-          SavedDataProto.SingleResult value) {
+          com.juicer.core.SavedDataProto.SingleResult value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableJuicerResultStorage().getMutableMap()
@@ -4241,7 +3335,7 @@ public final class SavedDataProto {
        */
 
       public Builder putAllJuicerResultStorage(
-          java.util.Map<java.lang.String, SavedDataProto.SingleResult> values) {
+          java.util.Map<java.lang.String, com.juicer.core.SavedDataProto.SingleResult> values) {
         internalGetMutableJuicerResultStorage().getMutableMap()
             .putAll(values);
         return this;
@@ -4263,12 +3357,12 @@ public final class SavedDataProto {
     }
 
     // @@protoc_insertion_point(class_scope:SavedData)
-    private static final SavedDataProto.SavedData DEFAULT_INSTANCE;
+    private static final com.juicer.core.SavedDataProto.SavedData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SavedDataProto.SavedData();
+      DEFAULT_INSTANCE = new com.juicer.core.SavedDataProto.SavedData();
     }
 
-    public static SavedDataProto.SavedData getDefaultInstance() {
+    public static com.juicer.core.SavedDataProto.SavedData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4293,7 +3387,7 @@ public final class SavedDataProto {
     }
 
     @java.lang.Override
-    public SavedDataProto.SavedData getDefaultInstanceForType() {
+    public com.juicer.core.SavedDataProto.SavedData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4314,16 +3408,6 @@ public final class SavedDataProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SingleTask_TaskEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_JuicerData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_JuicerData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_JuicerData_DataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_JuicerData_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SingleResult_descriptor;
   private static final 
@@ -4362,21 +3446,19 @@ public final class SavedDataProto {
       "\030\001 \001(\t\022\014\n\004next\030\002 \001(\t\022\022\n\nisFinished\030\003 \001(\010" +
       "\"k\n\nSingleTask\022#\n\004task\030\001 \003(\0132\025.SingleTas" +
       "k.TaskEntry\0328\n\tTaskEntry\022\013\n\003key\030\001 \001(\t\022\032\n" +
-      "\005value\030\002 \001(\0132\013.JuicerTask:\0028\001\"^\n\nJuicerD" +
-      "ata\022#\n\004data\030\001 \003(\0132\025.JuicerData.DataEntry" +
-      "\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"+\n\014SingleResult\022\033\n\006result\030\001 \003(\0132\013." +
-      "JuicerData\"\375\002\n\tSavedData\0228\n\017juicerTaskQu" +
-      "eue\030\001 \003(\0132\037.SavedData.JuicerTaskQueueEnt" +
-      "ry\0220\n\013juicerChain\030\002 \003(\0132\033.SavedData.Juic" +
-      "erChainEntry\022@\n\023juicerResultStorage\030\003 \003(" +
-      "\0132#.SavedData.JuicerResultStorageEntry\032C" +
-      "\n\024JuicerTaskQueueEntry\022\013\n\003key\030\001 \001(\t\022\032\n\005v" +
-      "alue\030\002 \001(\0132\013.SingleTask:\0028\001\0322\n\020JuicerCha" +
-      "inEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032" +
-      "I\n\030JuicerResultStorageEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\034\n\005value\030\002 \001(\0132\r.SingleResult:\0028\001B\037\n\017co" +
-      "m.juicer.coreB\014ShutdownDatab\006proto3"
+      "\005value\030\002 \001(\0132\013.JuicerTask:\0028\001\"\036\n\014SingleR" +
+      "esult\022\016\n\006result\030\001 \003(\t\"\375\002\n\tSavedData\0228\n\017j" +
+      "uicerTaskQueue\030\001 \003(\0132\037.SavedData.JuicerT" +
+      "askQueueEntry\0220\n\013juicerChain\030\002 \003(\0132\033.Sav" +
+      "edData.JuicerChainEntry\022@\n\023juicerResultS" +
+      "torage\030\003 \003(\0132#.SavedData.JuicerResultSto" +
+      "rageEntry\032C\n\024JuicerTaskQueueEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\032\n\005value\030\002 \001(\0132\013.SingleTask:\0028\001\0322" +
+      "\n\020JuicerChainEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\032I\n\030JuicerResultStorageEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\034\n\005value\030\002 \001(\0132\r.SingleResul" +
+      "t:\0028\001B!\n\017com.juicer.coreB\016SavedDataProto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4400,26 +3482,14 @@ public final class SavedDataProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SingleTask_TaskEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_JuicerData_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_JuicerData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_JuicerData_descriptor,
-        new java.lang.String[] { "Data", });
-    internal_static_JuicerData_DataEntry_descriptor =
-      internal_static_JuicerData_descriptor.getNestedTypes().get(0);
-    internal_static_JuicerData_DataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_JuicerData_DataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_SingleResult_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_SingleResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SingleResult_descriptor,
         new java.lang.String[] { "Result", });
     internal_static_SavedData_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_SavedData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SavedData_descriptor,
