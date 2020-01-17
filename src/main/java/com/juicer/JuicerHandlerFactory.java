@@ -5,7 +5,7 @@ import com.juicer.annotation.Href;
 import com.juicer.annotation.Parser;
 import com.juicer.core.*;
 import com.juicer.util.ClassScanner;
-import com.juicer.util.HandlerReflectHelper;
+import com.juicer.util.JuicerReflectHelper;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 
@@ -90,8 +90,8 @@ public class JuicerHandlerFactory {
     private static Function<Class<?>,JuicerHandler> juicerHandlerImpl = clz -> {
         Method[] methods = clz.getMethods();
         Handler handler = clz.getAnnotation(Handler.class);
-        Method hrefMethod = HandlerReflectHelper.getAnnotationMethod(methods, Href.class);
-        Method parserMethod = HandlerReflectHelper.getAnnotationMethod(methods, Parser.class);
+        Method hrefMethod = JuicerReflectHelper.getAnnotationMethod(methods, Href.class);
+        Method parserMethod = JuicerReflectHelper.getAnnotationMethod(methods, Parser.class);
         try {
             return new JuicerHandler() {
 
@@ -118,8 +118,8 @@ public class JuicerHandlerFactory {
                             }
                             JuicerData juicerData1 = (JuicerData)parserMethod.invoke(
                                     handlerImpl,
-                                    HandlerReflectHelper.getRequiredParameter(
-                                            HandlerReflectHelper.getParameterType(parserMethod)
+                                    JuicerReflectHelper.getRequiredParameter(
+                                            JuicerReflectHelper.getParameterType(parserMethod)
                                             ,juicerData
                                             ,response
                                             ,document
@@ -127,6 +127,10 @@ public class JuicerHandlerFactory {
                                     )
                             );
                             if(juicerData1 != null){
+                                String source = juicerData1.getString("_source");
+                                if (source!=null) {
+                                    juicerData1.put("_preUrl", source);
+                                }
                                 juicerData1.put("_source", document.location());
                                 return juicerData1;
                             } else {
@@ -150,8 +154,8 @@ public class JuicerHandlerFactory {
                     try {
                         if(hrefMethod!=null){
                             JuicerSource juicerSource =  (JuicerSource)hrefMethod.invoke(handlerImpl,
-                                    HandlerReflectHelper.getRequiredParameter(
-                                            HandlerReflectHelper.getParameterType(hrefMethod)
+                                    JuicerReflectHelper.getRequiredParameter(
+                                            JuicerReflectHelper.getParameterType(hrefMethod)
                                             ,juicerData
                                     )
                             );

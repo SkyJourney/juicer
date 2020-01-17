@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.juicer.test";
+option java_outer_classname = "ProtoTest";
+
+
+message SavedData {
+    map<string,string> juicerChain = 1;
+}

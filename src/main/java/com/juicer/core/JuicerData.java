@@ -2,6 +2,7 @@ package com.juicer.core;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author SkyJourney
@@ -24,7 +25,12 @@ public class JuicerData extends HashMap<String,Object> {
     }
 
     public String getString(String key){
-        return this.get(key).toString();
+        Object object = this.get(key);
+        if (object==null) {
+            return null;
+        } else {
+            return object.toString();
+        }
     }
 
 }

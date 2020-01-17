@@ -5,7 +5,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.stream.Stream;
 
-public class HandlerReflectHelper {
+/**
+ * @author SkyJourney
+ */
+public class JuicerReflectHelper {
 
     public static <A extends Annotation> Method getAnnotationMethod(Method[] methods, Class<A> annotationClass){
         Method[] methods1 = Stream.of(methods).filter(method -> method.getAnnotation(annotationClass)!=null).toArray(Method[]::new);
