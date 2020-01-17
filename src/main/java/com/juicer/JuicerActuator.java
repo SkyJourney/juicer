@@ -1,22 +1,26 @@
 package com.juicer;
 
 import com.alibaba.fastjson.JSON;
-import com.google.protobuf.Any;
 import com.juicer.annotation.EnableDataPersistence;
 import com.juicer.annotation.EnableInterruptResume;
 import com.juicer.annotation.HandlerScan;
 import com.juicer.annotation.JuicerConfiguration;
-import com.juicer.core.InterruptResume;
-import com.juicer.core.RuntimeStorage;
-import com.juicer.core.SavedDataProto;
+import com.juicer.core.*;
+import com.juicer.util.DocumentHelper;
 import com.juicer.util.PropertiesUtils;
+import org.jsoup.Connection;
+import org.jsoup.nodes.Document;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
+import java.util.function.Consumer;
 
 /**
  * @author SkyJourney
@@ -98,14 +102,19 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
 
     @Override
     public void resume(String path) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(new File(path));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Cannot open file.");
+        File file = new File(path);
+        if (file.exists()) {
+            FileInputStream fileInputStream = null;
+            try {
+                fileInputStream = new FileInputStream(new File(path));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                System.out.println("Cannot open file.");
+            }
+            readData(fileInputStream);
+            continueTaskQueue();
         }
-        readData(fileInputStream);
+
 
     }
 
@@ -120,7 +129,26 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         }
     }
 
-    public void saveData() {
+    private void saveData() {
+        SavedDataProto.SavedData savedData = getSavedData();
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(new File(juicerInterruptSettings.getProperty(DATA_SAVE_PATH)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Cannot access file.");
+        }
+        try {
+            Objects.requireNonNull(fileOutputStream);
+            fileOutputStream.write(savedData.toByteArray());
+            fileOutputStream.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private SavedDataProto.SavedData getSavedData() {
         RuntimeStorage runtimeStorage = getRuntimeStorage();
         SavedDataProto.SavedData.Builder builder = SavedDataProto.SavedData.newBuilder();
         builder.putAllJuicerChain(runtimeStorage.getJuicerChain());
@@ -131,10 +159,114 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
             ));
             builder.putJuicerResultStorage(handler, resultBuilder.build());
         });
-//        runtimeStorage.getJuicerTaskQueue()
+        runtimeStorage.getJuicerTaskQueue().forEach((handler,taskQueue) -> {
+            SavedDataProto.SingleTask.Builder taskBuilder = SavedDataProto.SingleTask.newBuilder();
+            taskQueue.forEach((url,juicerTask) -> {
+                taskBuilder.putTask(
+                        url.toExternalForm()
+                        , SavedDataProto.JuicerTask.newBuilder()
+                                .setUrl(juicerTask.getUrl().toExternalForm())
+                                .setNext(juicerTask.getNext()).setIsFinished(juicerTask.isFinished())
+                                .build()
+                );
+            });
+            builder.putJuicerTaskQueue(handler, taskBuilder.build());
+        });
+        return  builder.build();
     }
 
-    public void readData(InputStream inputStream) {
+    private void readData(InputStream inputStream) {
+        SavedDataProto.SavedData savedData = null;
+        try {
+            savedData = SavedDataProto.SavedData.parseFrom(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        RuntimeStorage runtimeStorage = getRuntimeStorage();
+        Objects.requireNonNull(savedData);
+        runtimeStorage.getJuicerChain().putAll(savedData.getJuicerChainMap());
+        savedData.getJuicerTaskQueueMap().forEach((handler,singleTask) -> {
+            Map<URL, JuicerTask> task = runtimeStorage.addHandlerTaskQueue(handler);
+            singleTask.getTaskMap().forEach((url,juicerTask) -> {
+                try {
+                    task.put(new URL(url)
+                            , new JuicerTask(
+                                    new URL(juicerTask.getUrl())
+                                    ,juicerTask.getNext()
+                                    ,juicerTask.getIsFinished()
+                            )
+                    );
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+            });
+        });
+        savedData.getJuicerResultStorageMap().forEach((handler,singleResult) -> {
+            List<JuicerData> juicerDataList = runtimeStorage.addJuicerResult(handler);
+            for(int i = 0;i<singleResult.getResultCount();i++) {
+                juicerDataList.add(JSON.parseObject(singleResult.getResult(i), JuicerData.class));
+            }
+        });
+    }
 
+    private void continueTaskQueue() {
+        Map<String, Map<URL, JuicerTask>> juicerTaskQueue = getRuntimeStorage().getJuicerTaskQueue();
+        if (juicerTaskQueue.size()!=0) {
+            for(String handler: juicerTaskQueue.keySet()) {
+                Consumer<Map.Entry<URL,JuicerTask>> continueTask = entry -> {
+                    Connection.Response response;
+                    try {
+                        response = DocumentHelper.getResponse(entry.getKey().toExternalForm(), Headers.getInstance().defaultHeaders());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        throw new RuntimeException("Cannot get response.");
+                    }
+                    Objects.requireNonNull(response);
+                    Document document;
+                    try {
+                        document = response.parse();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        throw new RuntimeException("Cannot get document.");
+                    }
+                    Objects.requireNonNull(document);
+                    String html = document.html();
+                    JuicerData resultData = null;
+                    JuicerData preData = null;
+                    JuicerHandler juicerHandler = getJuicerHandlerFactory().getJuicerHandler(handler);
+                    if (juicerHandler.hasParent()) {
+                        for (JuicerData juicerData :getRuntimeStorage().getJuicerResult(juicerHandler.getParent())) {
+                            if (juicerData.getString("_preUrl").equals(entry.getKey().toExternalForm())) {
+                                preData = juicerData;
+                            }
+                        }
+                        if (preData==null) {
+                            preData = JuicerData.getInstance();
+                        }
+                    } else {
+                        preData = JuicerData.getInstance();
+                    }
+                    resultData = juicerHandler.parse(preData, response, document, html);
+                    entry.getValue().setFinished(true);
+                    if (!getRuntimeStorage().isResultExist(handler)) {
+                        getRuntimeStorage().addJuicerResult(handler);
+                    }
+                    getRuntimeStorage().putJuicerData(handler, resultData);
+                    if (entry.getValue().getNext()!=null) {
+                        try {
+                            getDataFromHandler(entry.getValue().getNext(), resultData);
+                        } catch (ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
+                            throw new RuntimeException("Error when juicing");
+                        }
+                    }
+                };
+                juicerTaskQueue.get(handler).entrySet()
+                        .stream()
+                        .filter(entry -> !entry.getValue().isFinished())
+                        .forEach(continueTask);
+                juicerTaskQueue.remove(handler);
+            }
+        }
     }
 }

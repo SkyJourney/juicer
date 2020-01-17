@@ -127,6 +127,10 @@ public class JuicerHandlerFactory {
                                     )
                             );
                             if(juicerData1 != null){
+                                String source = juicerData1.getString("_source");
+                                if (source!=null) {
+                                    juicerData1.put("_preUrl", source);
+                                }
                                 juicerData1.put("_source", document.location());
                                 return juicerData1;
                             } else {

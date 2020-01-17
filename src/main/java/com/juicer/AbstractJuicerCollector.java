@@ -58,12 +58,22 @@ public abstract class AbstractJuicerCollector {
         return forkJoinPool.submit(()->getData(handlerBean)).get();
     }
 
+    public List<JuicerData> refreshDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {
+        runtimeStorage.removeJuicerResult(handlerBean);
+        return forkJoinPool.submit(()->getData(handlerBean)).get();
+    }
+
     private List<JuicerData> getData(String handlerBean){
         Headers headers = DocumentHelper.getSampleHeaders();
         return getData(handlerBean, headers, null);
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean,headers)).get();
+    }
+
+    public List<JuicerData> refreshDataFromHandler(String handlerBean, Headers headers) throws ExecutionException, InterruptedException {
+        runtimeStorage.removeJuicerResult(handlerBean);
         return forkJoinPool.submit(()->getData(handlerBean,headers)).get();
     }
 
@@ -75,12 +85,22 @@ public abstract class AbstractJuicerCollector {
         return forkJoinPool.submit(()->getData(handlerBean,juicerData)).get();
     }
 
+    public List<JuicerData> refreshDataFromHandler(String handlerBean,JuicerData juicerData) throws ExecutionException, InterruptedException {
+        runtimeStorage.removeJuicerResult(handlerBean);
+        return forkJoinPool.submit(()->getData(handlerBean,juicerData)).get();
+    }
+
     private List<JuicerData> getData(String handlerBean, JuicerData juicerData){
         Headers headers = DocumentHelper.getSampleHeaders();
         return getData(handlerBean, headers, juicerData);
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers, JuicerData juicerData) throws ExecutionException, InterruptedException {
+        return forkJoinPool.submit(()->getData(handlerBean,headers,juicerData)).get();
+    }
+
+    public List<JuicerData> refreshDataFromHandler(String handlerBean, Headers headers, JuicerData juicerData) throws ExecutionException, InterruptedException {
+        runtimeStorage.removeJuicerResult(handlerBean);
         return forkJoinPool.submit(()->getData(handlerBean,headers,juicerData)).get();
     }
 
@@ -126,7 +146,6 @@ public abstract class AbstractJuicerCollector {
                                         , false
                                 )
                         );
-                        System.out.println(runtimeStorage.getJuicerTaskQueue());
                         return new AbstractMap.SimpleEntry<>(juicerData, url);
                     });
         }
@@ -161,6 +180,16 @@ public abstract class AbstractJuicerCollector {
             runtimeStorage.getJuicerTask(handlerBean, entry.getValue()).setFinished(true);
             return resultData;
         }).forEach(juicerData1 -> runtimeStorage.putJuicerData(handlerBean, juicerData1));
+        if (juicerData!=null && runtimeStorage.getJuicerChain(handlerBean)!=null) {
+            runtimeStorage.getJuicerResult(handlerBean).forEach(juicerData1 -> {
+                try {
+                    getDataFromHandler(runtimeStorage.getJuicerChain(handlerBean),juicerData1);
+                } catch (ExecutionException | InterruptedException e) {
+                    e.printStackTrace();
+                    throw new RuntimeException("Error when juicing");
+                }
+            });
+        }
         runtimeStorage.removeHandlerTaskQueue(handlerBean);
         return runtimeStorage.getJuicerResult(handlerBean);
     }

@@ -77,12 +77,19 @@ public class RuntimeStorage {
         juicerResultStorage.get(handler).add(juicerData);
     }
 
-    public void addJuicerResult(String handler){
+    public List<JuicerData> addJuicerResult(String handler){
         juicerResultStorage.put(handler, new ArrayList<>());
+        return getJuicerResult(handler);
     }
 
     public List<JuicerData> getJuicerResult(String handler){
         return juicerResultStorage.get(handler);
+    }
+
+    public void removeJuicerResult(String handler) {
+        if (isResultExist(handler)) {
+            juicerResultStorage.remove(handler);
+        }
     }
 
     public boolean isResultExist(String handler) {
