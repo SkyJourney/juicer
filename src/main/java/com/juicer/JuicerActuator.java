@@ -63,11 +63,15 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         init();
     }
 
-    public JuicerActuator(Class<?> clz) {
-        this(clz, ForkJoinPool.commonPool());
+    public static JuicerActuator getActuatorByConfiguration(Class<?> clz) {
+        return new JuicerActuator(clz, ForkJoinPool.commonPool());
     }
 
-    public JuicerActuator(Class<?> clz, ForkJoinPool forkJoinPool) {
+    public static JuicerActuator getActuatorByConfiguration(Class<?> clz, ForkJoinPool forkJoinPool) {
+        return new JuicerActuator(clz, forkJoinPool);
+    }
+
+    private JuicerActuator(Class<?> clz, ForkJoinPool forkJoinPool) {
         super();
         setForkJoinPool(forkJoinPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);

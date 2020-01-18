@@ -8,6 +8,8 @@ import com.juicer.util.ClassScanner;
 import com.juicer.util.JuicerReflectHelper;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -34,6 +36,8 @@ import java.util.stream.Collectors;
  * @since 1.0
  */
 public class JuicerHandlerFactory {
+
+//    private Logger logger = LoggerFactory.getLogger(getClass());
 
 
     /**
