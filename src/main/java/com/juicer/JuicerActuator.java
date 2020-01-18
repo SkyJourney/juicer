@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.function.Consumer;
 
@@ -56,8 +57,8 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         this(juicerHandlerFactory,ForkJoinPool.commonPool(),propertiesPath);
     }
 
-    public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool, String propertiesPath) {
-        super(juicerHandlerFactory, forkJoinPool);
+    public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, ExecutorService threadPool, String propertiesPath) {
+        super(juicerHandlerFactory, threadPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
         PropertiesUtils.putProperties(juicerInterruptSettings,PropertiesUtils.read(propertiesPath));
         init();
@@ -67,13 +68,13 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         return new JuicerActuator(clz, ForkJoinPool.commonPool());
     }
 
-    public static JuicerActuator getActuatorByConfiguration(Class<?> clz, ForkJoinPool forkJoinPool) {
-        return new JuicerActuator(clz, forkJoinPool);
+    public static JuicerActuator getActuatorByConfiguration(Class<?> clz, ExecutorService threadPool) {
+        return new JuicerActuator(clz, threadPool);
     }
 
-    private JuicerActuator(Class<?> clz, ForkJoinPool forkJoinPool) {
+    private JuicerActuator(Class<?> clz, ExecutorService threadPool) {
         super();
-        setForkJoinPool(forkJoinPool);
+        setthreadPool(threadPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
         JuicerConfiguration juicerConfiguration = clz.getAnnotation(JuicerConfiguration.class);
         if (juicerConfiguration!=null) {
@@ -165,15 +166,13 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         });
         runtimeStorage.getJuicerTaskQueue().forEach((handler,taskQueue) -> {
             SavedDataProto.SingleTask.Builder taskBuilder = SavedDataProto.SingleTask.newBuilder();
-            taskQueue.forEach((url,juicerTask) -> {
-                taskBuilder.putTask(
-                        url.toExternalForm()
-                        , SavedDataProto.JuicerTask.newBuilder()
-                                .setUrl(juicerTask.getUrl().toExternalForm())
-                                .setNext(juicerTask.getNext()).setIsFinished(juicerTask.isFinished())
-                                .build()
-                );
-            });
+            taskQueue.forEach((url,juicerTask) -> taskBuilder.putTask(
+                    url.toExternalForm()
+                    , SavedDataProto.JuicerTask.newBuilder()
+                            .setUrl(juicerTask.getUrl().toExternalForm())
+                            .setNext(juicerTask.getNext()).setIsFinished(juicerTask.isFinished())
+                            .build()
+            ));
             builder.putJuicerTaskQueue(handler, taskBuilder.build());
         });
         return  builder.build();
@@ -235,7 +234,6 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
                     }
                     Objects.requireNonNull(document);
                     String html = document.html();
-                    JuicerData resultData = null;
                     JuicerData preData = null;
                     JuicerHandler juicerHandler = getJuicerHandlerFactory().getJuicerHandler(handler);
                     if (juicerHandler.hasParent()) {
@@ -250,7 +248,7 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
                     } else {
                         preData = JuicerData.getInstance();
                     }
-                    resultData = juicerHandler.parse(preData, response, document, html);
+                    JuicerData resultData = juicerHandler.parse(preData, response, document, html);
                     entry.getValue().setFinished(true);
                     if (!getRuntimeStorage().isResultExist(handler)) {
                         getRuntimeStorage().addJuicerResult(handler);

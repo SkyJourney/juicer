@@ -1,6 +1,5 @@
 package com.juicer;
 
-import com.juicer.JuicerHandlerFactory;
 import com.juicer.core.*;
 import com.juicer.util.DocumentHelper;
 import org.jsoup.Connection;
@@ -10,9 +9,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ExecutorService;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -28,39 +26,39 @@ public abstract class AbstractJuicerCollector {
         return runtimeStorage;
     }
 
-    private ForkJoinPool forkJoinPool;
+    private ExecutorService threadPool;
 
     public JuicerHandlerFactory getJuicerHandlerFactory() {
         return juicerHandlerFactory;
     }
 
-    public ForkJoinPool getForkJoinPool() {
-        return forkJoinPool;
+    public ExecutorService getThreadPool() {
+        return threadPool;
     }
 
     public void setJuicerHandlerFactory(JuicerHandlerFactory juicerHandlerFactory) {
         this.juicerHandlerFactory = juicerHandlerFactory;
     }
 
-    public void setForkJoinPool(ForkJoinPool forkJoinPool) {
-        this.forkJoinPool = forkJoinPool;
+    public void setthreadPool(ExecutorService threadPool) {
+        this.threadPool = threadPool;
     }
 
     public AbstractJuicerCollector() {
     }
 
-    public AbstractJuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ForkJoinPool forkJoinPool) {
+    public AbstractJuicerCollector(JuicerHandlerFactory juicerHandlerFactory, ExecutorService threadPool) {
         this.juicerHandlerFactory = juicerHandlerFactory;
-        this.forkJoinPool = forkJoinPool;
+        this.threadPool = threadPool;
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {
-        return forkJoinPool.submit(()->getData(handlerBean)).get();
+        return threadPool.submit(()->getData(handlerBean)).get();
     }
 
     public List<JuicerData> refreshDataFromHandler(String handlerBean) throws ExecutionException, InterruptedException {
         runtimeStorage.removeJuicerResult(handlerBean);
-        return forkJoinPool.submit(()->getData(handlerBean)).get();
+        return threadPool.submit(()->getData(handlerBean)).get();
     }
 
     private List<JuicerData> getData(String handlerBean){
@@ -69,12 +67,12 @@ public abstract class AbstractJuicerCollector {
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers) throws ExecutionException, InterruptedException {
-        return forkJoinPool.submit(()->getData(handlerBean,headers)).get();
+        return threadPool.submit(()->getData(handlerBean,headers)).get();
     }
 
     public List<JuicerData> refreshDataFromHandler(String handlerBean, Headers headers) throws ExecutionException, InterruptedException {
         runtimeStorage.removeJuicerResult(handlerBean);
-        return forkJoinPool.submit(()->getData(handlerBean,headers)).get();
+        return threadPool.submit(()->getData(handlerBean,headers)).get();
     }
 
     private List<JuicerData> getData(String handlerBean, Headers headers){
@@ -82,12 +80,12 @@ public abstract class AbstractJuicerCollector {
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean,JuicerData juicerData) throws ExecutionException, InterruptedException {
-        return forkJoinPool.submit(()->getData(handlerBean,juicerData)).get();
+        return threadPool.submit(()->getData(handlerBean,juicerData)).get();
     }
 
     public List<JuicerData> refreshDataFromHandler(String handlerBean,JuicerData juicerData) throws ExecutionException, InterruptedException {
         runtimeStorage.removeJuicerResult(handlerBean);
-        return forkJoinPool.submit(()->getData(handlerBean,juicerData)).get();
+        return threadPool.submit(()->getData(handlerBean,juicerData)).get();
     }
 
     private List<JuicerData> getData(String handlerBean, JuicerData juicerData){
@@ -96,12 +94,12 @@ public abstract class AbstractJuicerCollector {
     }
 
     public List<JuicerData> getDataFromHandler(String handlerBean, Headers headers, JuicerData juicerData) throws ExecutionException, InterruptedException {
-        return forkJoinPool.submit(()->getData(handlerBean,headers,juicerData)).get();
+        return threadPool.submit(()->getData(handlerBean,headers,juicerData)).get();
     }
 
     public List<JuicerData> refreshDataFromHandler(String handlerBean, Headers headers, JuicerData juicerData) throws ExecutionException, InterruptedException {
         runtimeStorage.removeJuicerResult(handlerBean);
-        return forkJoinPool.submit(()->getData(handlerBean,headers,juicerData)).get();
+        return threadPool.submit(()->getData(handlerBean,headers,juicerData)).get();
     }
 
     private List<JuicerData> getData(String handlerBean, Headers headers, JuicerData juicerData){
