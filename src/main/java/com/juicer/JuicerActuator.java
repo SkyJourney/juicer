@@ -29,9 +29,9 @@ import java.util.function.Consumer;
 public class JuicerActuator extends AbstractJuicerCollector implements InterruptResume {
 
     private static final Properties DEFAULT_INTERRUPT_SETTINGS;
-    private static final String INTERRUPT_SAVE_ALLOW = "juicer.interrupt.save.allow";
-    private static final String DATA_SAVE_PATH = "juicer.data.save.path";
-    private static final String DATA_PERSISTENCE = "juicer.data.persistence.allow";
+    private static final String INTERRUPT_SAVE_ALLOW = "juicer.data.interrupt-save";
+    private static final String DATA_SAVE_PATH = "juicer.data.save-path";
+    private static final String DATA_PERSISTENCE = "juicer.data.persistence";
     private static final String TRUE = "true";
     private static final String FALSE = "false";
 
@@ -61,6 +61,17 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         super(juicerHandlerFactory, threadPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
         PropertiesUtils.putProperties(juicerInterruptSettings,PropertiesUtils.read(propertiesPath));
+        init();
+    }
+
+    public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, Properties properties) {
+        this(juicerHandlerFactory,ForkJoinPool.commonPool(),properties);
+    }
+
+    public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, ExecutorService threadPool, Properties properties) {
+        super(juicerHandlerFactory, threadPool);
+        juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
+        PropertiesUtils.putProperties(juicerInterruptSettings,properties);
         init();
     }
 
