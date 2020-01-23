@@ -53,6 +53,10 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
         this(juicerHandlerFactory,ForkJoinPool.commonPool(),"juicer.properties");
     }
 
+    public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, ExecutorService threadPool) {
+        this(juicerHandlerFactory,threadPool,"juicer.properties");
+    }
+
     public JuicerActuator(JuicerHandlerFactory juicerHandlerFactory, String propertiesPath) {
         this(juicerHandlerFactory,ForkJoinPool.commonPool(),propertiesPath);
     }
