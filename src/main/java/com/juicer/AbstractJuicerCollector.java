@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -40,7 +41,7 @@ public abstract class AbstractJuicerCollector {
         this.juicerHandlerFactory = juicerHandlerFactory;
     }
 
-    public void setthreadPool(ExecutorService threadPool) {
+    public void setThreadPool(ExecutorService threadPool) {
         this.threadPool = threadPool;
     }
 
@@ -107,7 +108,15 @@ public abstract class AbstractJuicerCollector {
             return runtimeStorage.getJuicerResult(handlerBean);
         }
         JuicerHandler juicerHandler = juicerHandlerFactory.getJuicerHandler(handlerBean);
-        Stream<Map.Entry<JuicerData,URL>> stream;
+        List<Map.Entry<JuicerData,URL>> entries = generateTaskQueue(juicerHandler, handlerBean, headers, juicerData);
+        if(juicerData!=null && juicerData.get("_source")!=null){
+            headers.put("referer", (String)juicerData.get("_source"));
+        }
+        parseData(entries, juicerHandler, handlerBean, headers, juicerData);
+        return runtimeStorage.getJuicerResult(handlerBean);
+    }
+
+    private List<Map.Entry<JuicerData,URL>> generateTaskQueue(JuicerHandler juicerHandler, String handlerBean, Headers headers, JuicerData juicerData) {
         Function<JuicerData, Stream<Map.Entry<JuicerData,URL>>> getUrlsFromParent = preData -> {
             if(preData!=null && preData.get("_source")!=null){
                 headers.put("referer", (String)preData.get("_source"));
@@ -126,15 +135,16 @@ public abstract class AbstractJuicerCollector {
                         return new AbstractMap.SimpleEntry<>(preData, url);
                     });
         };
+
         if(juicerHandler.hasParent()
                 && juicerData==null){
             runtimeStorage.putJuicerChain(juicerHandler.getParent(), handlerBean);
-            stream = this.getData(juicerHandler.getParent(),headers)
+            return this.getData(juicerHandler.getParent(),headers)
                     .parallelStream()
-                    .flatMap(getUrlsFromParent);
+                    .flatMap(getUrlsFromParent).collect(Collectors.toList());
         } else {
             runtimeStorage.addHandlerTaskQueue(handlerBean);
-            stream = juicerHandler.getUrls(juicerData)
+            return juicerHandler.getUrls(juicerData)
                     .parallelStream()
                     .map(url -> {
                         runtimeStorage.putJuicerTask(handlerBean
@@ -145,13 +155,13 @@ public abstract class AbstractJuicerCollector {
                                 )
                         );
                         return new AbstractMap.SimpleEntry<>(juicerData, url);
-                    });
+                    }).collect(Collectors.toList());
         }
-        if(juicerData!=null && juicerData.get("_source")!=null){
-            headers.put("referer", (String)juicerData.get("_source"));
-        }
+    }
+
+    private void parseData(List<Map.Entry<JuicerData,URL>> entries, JuicerHandler juicerHandler, String handlerBean, Headers headers, JuicerData juicerData) {
         runtimeStorage.addJuicerResult(handlerBean);
-        stream.map(entry -> {
+        entries.parallelStream().map(entry -> {
             Connection.Response response;
             try {
                 response = DocumentHelper.getResponse(entry.getValue().toExternalForm(), headers);
@@ -189,6 +199,5 @@ public abstract class AbstractJuicerCollector {
             });
         }
         runtimeStorage.removeHandlerTaskQueue(handlerBean);
-        return runtimeStorage.getJuicerResult(handlerBean);
     }
 }

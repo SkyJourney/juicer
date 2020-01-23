@@ -89,7 +89,7 @@ public class JuicerActuator extends AbstractJuicerCollector implements Interrupt
 
     private JuicerActuator(Class<?> clz, ExecutorService threadPool) {
         super();
-        setthreadPool(threadPool);
+        setThreadPool(threadPool);
         juicerInterruptSettings = new Properties(DEFAULT_INTERRUPT_SETTINGS);
         JuicerConfiguration juicerConfiguration = clz.getAnnotation(JuicerConfiguration.class);
         if (juicerConfiguration!=null) {
