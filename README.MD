@@ -1,3 +1,4 @@
+![image](https://github.com/SkyJourney/juicer/raw/master/resources/logo.png)
 # Juicer - 专注网页数据解析 Focus on your PARSER
 **Juicer** 是一个简易的基于 [_Jsoup_][jsoup] 和注解的爬虫模块，用于快速开发网页数据解析。
 你可以用注解快速完成网页数据解析。该模块的目的是为了让开发者专注于其解析方法，让模块完成相关的抓取网页和收集操作。
