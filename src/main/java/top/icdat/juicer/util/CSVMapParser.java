@@ -1,6 +1,6 @@
-package com.juicer.util;
+package top.icdat.juicer.util;
 
-import com.juicer.core.JuicerData;
+import top.icdat.juicer.core.JuicerData;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -8,7 +8,6 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.BufferedReader;
 import java.io.Reader;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**

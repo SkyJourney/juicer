@@ -1,4 +1,4 @@
-package com.juicer.annotation;
+package top.icdat.juicer.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,14 +1,10 @@
 package test;
 
-import com.juicer.JuicerActuator;
-import com.juicer.JuicerHandlerFactory;
-import com.juicer.annotation.EnableDataPersistence;
-import com.juicer.annotation.EnableInterruptResume;
-import com.juicer.annotation.HandlerScan;
-import com.juicer.annotation.JuicerConfiguration;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ForkJoinPool;
+import top.icdat.juicer.JuicerActuator;
+import top.icdat.juicer.annotation.EnableDataPersistence;
+import top.icdat.juicer.annotation.EnableInterruptResume;
+import top.icdat.juicer.annotation.HandlerScan;
+import top.icdat.juicer.annotation.JuicerConfiguration;
 
 //标注为Juicer配置类，可通过参数修改保存数据的位置
 @JuicerConfiguration(savePath = "./JuicerData.jdt")

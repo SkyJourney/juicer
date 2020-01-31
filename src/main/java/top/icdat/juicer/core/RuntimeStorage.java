@@ -1,10 +1,9 @@
-package com.juicer.core;
+package top.icdat.juicer.core;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**

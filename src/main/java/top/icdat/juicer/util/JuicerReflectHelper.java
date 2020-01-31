@@ -1,4 +1,4 @@
-package com.juicer.util;
+package top.icdat.juicer.util;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

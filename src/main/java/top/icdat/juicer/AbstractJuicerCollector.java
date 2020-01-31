@@ -1,7 +1,7 @@
-package com.juicer;
+package top.icdat.juicer;
 
-import com.juicer.core.*;
-import com.juicer.util.DocumentHelper;
+import top.icdat.juicer.core.*;
+import top.icdat.juicer.util.DocumentHelper;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 

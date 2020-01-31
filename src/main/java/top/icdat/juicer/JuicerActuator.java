@@ -1,13 +1,13 @@
-package com.juicer;
+package top.icdat.juicer;
 
 import com.alibaba.fastjson.JSON;
-import com.juicer.annotation.EnableDataPersistence;
-import com.juicer.annotation.EnableInterruptResume;
-import com.juicer.annotation.HandlerScan;
-import com.juicer.annotation.JuicerConfiguration;
-import com.juicer.core.*;
-import com.juicer.util.DocumentHelper;
-import com.juicer.util.PropertiesUtils;
+import top.icdat.juicer.annotation.EnableDataPersistence;
+import top.icdat.juicer.annotation.EnableInterruptResume;
+import top.icdat.juicer.annotation.HandlerScan;
+import top.icdat.juicer.annotation.JuicerConfiguration;
+import top.icdat.juicer.core.*;
+import top.icdat.juicer.util.DocumentHelper;
+import top.icdat.juicer.util.PropertiesUtils;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 

@@ -1,4 +1,4 @@
-package com.juicer.core;
+package top.icdat.juicer.core;
 
 
 /**

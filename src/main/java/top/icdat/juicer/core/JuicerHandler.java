@@ -1,14 +1,14 @@
-package com.juicer.core;
+package top.icdat.juicer.core;
 
-import com.juicer.JuicerHandlerFactory;
+import top.icdat.juicer.JuicerHandlerFactory;
 
 /**
- * 用于生成handler实例的接口，继承了 {@link com.juicer.core.HrefSupplier} 和
- * {@link com.juicer.core.DomParser} 两个接口，并要求了链式上级元素的判断和提取
+ * 用于生成handler实例的接口，继承了 {@link HrefSupplier} 和
+ * {@link DomParser} 两个接口，并要求了链式上级元素的判断和提取
  * 方法。其实例通过 {@link JuicerHandlerFactory} 生成。 <br>
  * The interface is used to generate the handler instance. it inherits the
- * two interfaces {@link com.juicer.core.HrefSupplier} and
- * {@link com.juicer.core.DomParser}, and requires the judgment method and
+ * two interfaces {@link HrefSupplier} and
+ * {@link DomParser}, and requires the judgment method and
  * getter method of the chained superior element. Its instance is generated
  * by {@link JuicerHandlerFactory}.
  * @author SkyJourney

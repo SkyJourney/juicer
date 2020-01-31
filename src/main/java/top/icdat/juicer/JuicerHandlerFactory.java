@@ -1,15 +1,13 @@
-package com.juicer;
+package top.icdat.juicer;
 
-import com.juicer.annotation.Handler;
-import com.juicer.annotation.Href;
-import com.juicer.annotation.Parser;
-import com.juicer.core.*;
-import com.juicer.util.ClassScanner;
-import com.juicer.util.JuicerReflectHelper;
+import top.icdat.juicer.annotation.Handler;
+import top.icdat.juicer.annotation.Href;
+import top.icdat.juicer.annotation.Parser;
+import top.icdat.juicer.core.*;
+import top.icdat.juicer.util.ClassScanner;
+import top.icdat.juicer.util.JuicerReflectHelper;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -21,12 +19,12 @@ import java.util.stream.Collectors;
 
 /**
  * 该工厂类是注册Handler的核心组件，通过包名扫描自动添加Handler到工厂中，注解方法被加载为
- * {@link com.juicer.core.JuicerHandler} 接口的实现。工厂提供动态添加Handler的方法
+ * {@link JuicerHandler} 接口的实现。工厂提供动态添加Handler的方法
  * addJuicerHandler，利用函数式编程添加自定义Handler。 <br>
  * This factory class is the core component for registering Handlers. Handlers
  * are automatically added to the factory through package name scanning, and
  * annotation methods are loaded as implementations of the
- * {@link com.juicer.core.JuicerHandler} interface. The factory provides the method
+ * {@link JuicerHandler} interface. The factory provides the method
  * addJuicerHandler that dynamically adds Handlers, and uses functional
  * programming to add custom Handlers. <br>
  * @author SkyJourney

@@ -1,4 +1,4 @@
-package com.juicer.core;
+package top.icdat.juicer.core;
 
 import java.net.MalformedURLException;
 import java.net.URL;

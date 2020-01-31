@@ -1,4 +1,4 @@
-package com.juicer.annotation;
+package top.icdat.juicer.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,8 +10,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface HandlerScan {
-
-    String[] basePackages() default {};
-
+public @interface EnableDataPersistence {
+    boolean enable() default true;
 }

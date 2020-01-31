@@ -1,4 +1,4 @@
-package com.juicer.util;
+package top.icdat.juicer.util;
 
 import java.io.File;
 import java.io.IOException;

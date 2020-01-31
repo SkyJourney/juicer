@@ -1,6 +1,6 @@
-package com.juicer.util;
+package top.icdat.juicer.util;
 
-import com.juicer.core.Headers;
+import top.icdat.juicer.core.Headers;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

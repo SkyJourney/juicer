@@ -1,8 +1,7 @@
-package com.juicer.core;
+package top.icdat.juicer.core;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @author SkyJourney
